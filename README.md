@@ -1,2 +1,5 @@
-# portfolio
-spring으로 만드는 portfolio
+# 포트폴리오 사이트 만들기(중지)
+
+```
+notion, github pages를 사용하는 게 효율적이라 판단하여 프로젝트 중지
+```
