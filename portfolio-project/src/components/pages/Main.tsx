@@ -11,7 +11,7 @@ export default function Main() {
               <div className="lg:max-w-lg">
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Profile</h1>
                 <p className="mt-6 text-xl leading-8 text-gray-700">
-                  "1명의 개발자가 하나의 기업가치를 갖는다"라는 신념을<br />
+                  "<b>1명의 개발자가 하나의 기업가치를 갖는다</b>"라는 신념을<br />
                   가지고 있는 개발자 이진우입니다.<br />
                   <br />
                   제가 잘하는 일은 문제를 인식하고,<br />
@@ -21,7 +21,8 @@ export default function Main() {
                   팀원, 협력부서 더 나아가 클라이언트와의 <br />
                   원활한 커뮤니케이션 능력을 갖추고 있습니다.<br />
                   <br />
-                  작성중
+                  항상 겸손한 마음가짐으로 여러 경험을 쌓으며<br />
+                  현재도 계속해서 발전해 나가고 있습니다.
                 </p>
               </div>
             </div>
