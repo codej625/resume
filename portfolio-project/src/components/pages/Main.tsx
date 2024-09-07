@@ -1,5 +1,6 @@
 // import { useState } from 'react'
 import './../../assets/common.css'
+import { RiJavaLine } from "@remixicon/react";
 
 export default function Main() {
   return (
@@ -55,38 +56,59 @@ export default function Main() {
               <div className="lg:max-w-lg">
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Work Experience</h1>
                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                  <li className="">
+                  <li className="pb-12">
                     <div className="flex">
                       <span className="span-width-3">2024.05 ~ 재직중</span>
                       <span>
-                        <strong className="ps-10 font-semibold text-gray-900">나이콤</strong>
+                        <strong className="font-semibold text-gray-900">나이콤</strong>
                       </span>
                     </div>
-                    <p>
-                      contents
-                    </p>
+                    <div className='mb-3'>웹 개발팀 대리</div>
+                    <div className='mb-3'>
+                      - 키오스크 프로그램 및 자사 솔루션 개발<br />
+                      - 개발 기획, 프로젝트 테크 리더<br />
+                      - 클라이언트 커뮤니케이션<br />
+                      - 멘토링
+                    </div>
+                    <div>Spring Boot / MySQL / PHP / HTML / CSS / Javascript</div>
+                    <RiJavaLine
+                      size={20}
+                      color="black"
+                    />
                   </li>
-                  <li className="">
+                  <li className="pb-12">
                     <div className="flex">
                       <span className="span-width-3">2022.01 ~ 2024.04</span>
                       <span>
-                        <strong className="ps-10 font-semibold text-gray-900">엠플랜잇</strong>
+                        <strong className="font-semibold text-gray-900">엠플랜잇</strong>
                       </span>
                     </div>
-                    <p>
-                      contents
-                    </p>
+                    <div className='mb-3'>연구개발전담부서 선임연구원</div>
+                    <div className='mb-3'>
+                      - 클라이언트 SI / SM<br />
+                      - 클라이언트 커뮤니케이션 및 기술지원<br />
+                      - 자사 홈페이지 및 어드민 사이트 유지보수<br />
+                      - 서버 관리<br />
+                      - 보안 감사 대응
+                    </div>
+                    <div>Aapache / MySQL / PHP / HTML / CSS / Javascript</div>
                   </li>
                   <li className="">
                     <div className='flex'>
                       <span className="span-width-3">2017.09 ~ 2021.01</span>
                       <span>
-                        <strong className="ps-10 font-semibold text-gray-900">컴퓨존</strong>
+                        <strong className="font-semibold text-gray-900">컴퓨존</strong>
                       </span>
                     </div>
-                    <p>
-                      contents
-                    </p>
+                    <div className='mb-3'>전산팀 사원/팀원</div>
+                    <div className='mb-3'>
+                      - 자사 사이트 ERP 시스템 유지보수 / 기능 개발<br />
+                      - 시스템 사고 처리<br />
+                      - 테스트 작성<br />
+                      - 데이터 관리<br />
+                      - 영향도 분석 및 모니터링
+                    </div>
+                    <div>Aapache / MySQL / PHP / HTML / CSS / Javascript</div>
                   </li>
                 </ul>
               </div>
