@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './../../assets/common.css'
-import { RiJavaLine } from "@remixicon/react";
+import { RiJavaLine, RiJavascriptLine, RiHtml5Line, RiCss3Line, RiNodejsLine } from "@remixicon/react";
 
 export default function Main() {
   return (
@@ -56,6 +56,25 @@ export default function Main() {
               <div className="lg:max-w-lg">
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Work Experience</h1>
                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
+                  <li>
+                    <div className='flex'>
+                      <RiJavaLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Java (Spring Boot)</div>
+                      <RiJavascriptLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Javascript (React)</div>
+                      <RiNodejsLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Node</div>
+                    </div>
+                  </li>
                   <li className="pb-12">
                     <div className="flex">
                       <span className="span-width-3">2024.05 ~ 재직중</span>
@@ -70,11 +89,6 @@ export default function Main() {
                       - 클라이언트 커뮤니케이션<br />
                       - 멘토링
                     </div>
-                    <div>Spring Boot / MySQL / PHP / HTML / CSS / Javascript</div>
-                    <RiJavaLine
-                      size={20}
-                      color="black"
-                    />
                   </li>
                   <li className="pb-12">
                     <div className="flex">
@@ -91,7 +105,6 @@ export default function Main() {
                       - 서버 관리<br />
                       - 보안 감사 대응
                     </div>
-                    <div>Aapache / MySQL / PHP / HTML / CSS / Javascript</div>
                   </li>
                   <li className="">
                     <div className='flex'>
@@ -108,7 +121,6 @@ export default function Main() {
                       - 데이터 관리<br />
                       - 영향도 분석 및 모니터링
                     </div>
-                    <div>Aapache / MySQL / PHP / HTML / CSS / Javascript</div>
                   </li>
                 </ul>
               </div>
