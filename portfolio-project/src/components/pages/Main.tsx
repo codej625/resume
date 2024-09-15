@@ -53,11 +53,25 @@ export default function Main() {
 
           <div className="lg:col-span-2 lg:col-start-1 lg:row-start-9 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
             <div className="lg:pr-4">
-              <div className="lg:max-w-lg">
+              <div>
                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Work Experience</h1>
                 <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                  <li>
-                    <div className='flex'>
+                  <li className="pb-12 overflow-auto">
+                    <div className="flex">
+                      <span className="span-width-3">2024.05 ~ 재직중</span>
+                      <span>
+                        <strong className="font-semibold text-gray-900">나이콤</strong>
+                      </span>
+                    </div>
+                    <div className='mb-3'>웹 개발팀 대리</div>
+                    <div className='mb-3'>
+                      - 키오스크 프로그램 및 자사 솔루션 개발<br />
+                      - 개발 기획, 프로젝트 테크 리더<br />
+                      - 클라이언트 커뮤니케이션<br />
+                      - 멘토링
+                    </div>
+                    <div className='flex w-full-px'>
+                      <div className='me-2'>Skills:</div>
                       <RiJavaLine
                         size={20}
                         color="black"
@@ -72,22 +86,7 @@ export default function Main() {
                         size={20}
                         color="black"
                       />
-                      <div className='me-2'>Node</div>
-                    </div>
-                  </li>
-                  <li className="pb-12">
-                    <div className="flex">
-                      <span className="span-width-3">2024.05 ~ 재직중</span>
-                      <span>
-                        <strong className="font-semibold text-gray-900">나이콤</strong>
-                      </span>
-                    </div>
-                    <div className='mb-3'>웹 개발팀 대리</div>
-                    <div className='mb-3'>
-                      - 키오스크 프로그램 및 자사 솔루션 개발<br />
-                      - 개발 기획, 프로젝트 테크 리더<br />
-                      - 클라이언트 커뮤니케이션<br />
-                      - 멘토링
+                      <div className='me-2'>Node.js (Express)</div>
                     </div>
                   </li>
                   <li className="pb-12">
