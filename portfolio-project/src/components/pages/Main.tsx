@@ -82,11 +82,6 @@ export default function Main() {
                         color="black"
                       />
                       <div className='me-2'>Javascript (React)</div>
-                      <RiNodejsLine
-                        size={20}
-                        color="black"
-                      />
-                      <div className='me-2'>Node.js (Express)</div>
                     </div>
                   </li>
                   <li className="pb-12">
@@ -104,6 +99,24 @@ export default function Main() {
                       - 서버 관리<br />
                       - 보안 감사 대응
                     </div>
+                    <div className='flex w-full-px'>
+                      <div className='me-2'>Skills:</div>
+                      <RiJavaLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Java (Spring Boot)</div>
+                      <RiJavascriptLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Javascript (React)</div>
+                      <RiNodejsLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Node.js (Express)</div>
+                    </div>
                   </li>
                   <li className="">
                     <div className='flex'>
@@ -119,6 +132,15 @@ export default function Main() {
                       - 테스트 작성<br />
                       - 데이터 관리<br />
                       - 영향도 분석 및 모니터링
+                    </div>
+                    <div className='flex w-full-px'>
+                      <div className='me-2'>Skills:</div>
+                      <div className='me-2'>PHP (Legacy 5.x)</div>
+                      <RiJavascriptLine
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>Javascript</div>
                     </div>
                   </li>
                 </ul>
