@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './../../assets/common.css'
-import { RiJavaLine, RiJavascriptLine, RiHtml5Line, RiCss3Line, RiNodejsLine } from "@remixicon/react";
+import { RiJavaLine, RiJavascriptLine, RiAmazonFill, RiNodejsLine, RiReactjsLine } from "@remixicon/react";
 
 export default function Main() {
   return (
@@ -81,10 +81,12 @@ export default function Main() {
                         size={20}
                         color="black"
                       />
-                      <div className='me-2'>Javascript (React)</div>
+                      <div className='me-2'>Javascript</div>
+                      <div className='me-2'>Docker</div>
+                      <div className='me-2'>Jenkins</div>
                     </div>
                   </li>
-                  <li className="pb-12">
+                  <li className="pb-12 overflow-auto">
                     <div className="flex">
                       <span className="span-width-3">2022.01 ~ 2024.04</span>
                       <span>
@@ -106,19 +108,24 @@ export default function Main() {
                         color="black"
                       />
                       <div className='me-2'>Java (Spring Boot)</div>
-                      <RiJavascriptLine
+                      <RiReactjsLine
                         size={20}
                         color="black"
                       />
-                      <div className='me-2'>Javascript (React)</div>
+                      <div className='me-2'>React</div>
                       <RiNodejsLine
                         size={20}
                         color="black"
                       />
                       <div className='me-2'>Node.js (Express)</div>
+                      <RiAmazonFill
+                        size={20}
+                        color="black"
+                      />
+                      <div className='me-2'>AWS</div>
                     </div>
                   </li>
-                  <li className="">
+                  <li className="overflow-auto">
                     <div className='flex'>
                       <span className="span-width-3">2017.09 ~ 2021.01</span>
                       <span>
