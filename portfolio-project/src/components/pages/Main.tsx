@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 import './../../assets/common.css'
-import { RiJavaLine, RiJavascriptLine, RiAmazonFill, RiNodejsLine, RiReactjsLine } from "@remixicon/react";
+// import { RiJavaLine, RiJavascriptLine, RiAmazonFill, RiNodejsLine, RiReactjsLine } from "@remixicon/react";
+import * as icon from "@remixicon/react";
 
 export default function Main() {
   return (
@@ -63,21 +64,21 @@ export default function Main() {
                         <strong className="font-semibold text-gray-900">나이콤</strong>
                       </span>
                     </div>
-                    <div className='mb-3'>웹 개발팀 대리</div>
+                    <div className='mb-3'>[ 웹 개발팀 / 대리 ]</div>
                     <div className='mb-3'>
-                      - 키오스크 프로그램 및 자사 솔루션 개발<br />
+                      - 키오스크 프로그램 및 메뉴얼 작성<br />
+                      - 자사 ERP 개발<br />
                       - 개발 기획, 프로젝트 테크 리더<br />
-                      - 클라이언트 커뮤니케이션<br />
-                      - 멘토링
+                      - 클라이언트 커뮤니케이션 및 기술지원
                     </div>
                     <div className='flex w-full-px'>
                       <div className='me-2'>Skills:</div>
-                      <RiJavaLine
+                      <icon.RiJavaLine
                         size={20}
                         color="black"
                       />
                       <div className='me-2'>Java (Spring Boot)</div>
-                      <RiJavascriptLine
+                      <icon.RiJavascriptLine
                         size={20}
                         color="black"
                       />
@@ -93,32 +94,32 @@ export default function Main() {
                         <strong className="font-semibold text-gray-900">엠플랜잇</strong>
                       </span>
                     </div>
-                    <div className='mb-3'>연구개발전담부서 선임연구원</div>
+                    <div className='mb-3'>[ 연구개발전담부서 / 선임연구원 ]</div>
                     <div className='mb-3'>
                       - 클라이언트 SI / SM<br />
                       - 클라이언트 커뮤니케이션 및 기술지원<br />
-                      - 자사 홈페이지 및 어드민 사이트 유지보수<br />
-                      - 서버 관리<br />
-                      - 보안 감사 대응
+                      - 보안 보안 감사 대응<br />
+                      - 자사 사이트 및 ERP, 솔루션 개발<br />
+                      - 서버 관리
                     </div>
                     <div className='flex w-full-px'>
                       <div className='me-2'>Skills:</div>
-                      <RiJavaLine
+                      <icon.RiJavaLine
                         size={20}
                         color="black"
                       />
                       <div className='me-2'>Java (Spring Boot)</div>
-                      <RiReactjsLine
+                      <icon.RiReactjsLine
                         size={20}
                         color="black"
                       />
                       <div className='me-2'>React</div>
-                      <RiNodejsLine
+                      <icon.RiNodejsLine
                         size={20}
                         color="black"
                       />
                       <div className='me-2'>Node.js (Express)</div>
-                      <RiAmazonFill
+                      <icon.RiAmazonFill
                         size={20}
                         color="black"
                       />
@@ -132,18 +133,18 @@ export default function Main() {
                         <strong className="font-semibold text-gray-900">컴퓨존</strong>
                       </span>
                     </div>
-                    <div className='mb-3'>전산팀 사원/팀원</div>
+                    <div className='mb-3'>[ 전산팀 / 사원 ]</div>
                     <div className='mb-3'>
-                      - 자사 사이트 ERP 시스템 유지보수 / 기능 개발<br />
+                      - 자사 사이트, ERP 시스템 개발<br />
                       - 시스템 사고 처리<br />
-                      - 테스트 작성<br />
-                      - 데이터 관리<br />
+                      - 유저 / 단위 테스트 작성<br />
+                      - 데이터베이스 데이터 관리<br />
                       - 영향도 분석 및 모니터링
                     </div>
                     <div className='flex w-full-px'>
                       <div className='me-2'>Skills:</div>
                       <div className='me-2'>PHP (Legacy 5.x)</div>
-                      <RiJavascriptLine
+                      <icon.RiJavascriptLine
                         size={20}
                         color="black"
                       />
