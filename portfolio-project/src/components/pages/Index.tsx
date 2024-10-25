@@ -5,6 +5,9 @@ export default function Main() {
   return (
     <>
       <Header />
+      <main>
+        
+      </main>
       <Footer />
     </>
   );
