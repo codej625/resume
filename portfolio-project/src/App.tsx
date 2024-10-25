@@ -1,15 +1,12 @@
-// import { useState } from 'react'
-import './assets/common.css'
-import Header from './components/commons/Header';
-import Footer from './components/commons/Footer';
-import Main from './components/pages/Main';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Index from "./components/pages/Index";
 
 export default function App() {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Index />} />
+      </Routes>
+    </Router>
+  );
 }

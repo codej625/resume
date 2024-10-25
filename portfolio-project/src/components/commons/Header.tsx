@@ -1,70 +1,39 @@
-import { useState } from 'react'
-import { Disclosure } from '@headlessui/react'
-import './../../assets/common.css'
-
-function classNames(...classes: (string | false | null | undefined)[]): string {
-  return classes.filter(Boolean).join(' ');
-}
+import { useState } from "react";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./../../assets/common.css";
 
 export default function Header() {
-  
   interface NavigationItem {
     name: string;
     href: string;
     current: boolean;
   }
 
-  const [navigation, setNavigation] = useState<NavigationItem[]>([
-    { name: 'Profile', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Skills', href: '#', current: false },
-  ]);
-
-  const changeDashboard = (name: string): void => {
-    setNavigation(prev =>
-      prev.map(item => item.name === name ? { ...item, current: true } : { ...item, current: false })
-    );
-  };
-
   return (
     <header>
-      <Disclosure as="nav" className="bg-white-800">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div className="relative flex h-16 items-center justify-between">
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="flex flex-shrink-0 items-center">
-                <img
-                  alt="codej625"
-                  src="https://avatars.githubusercontent.com/u/77843136?v=4"
-                  className="h-8 w-auto"
-                />
-              </div>
-              <div className="hidden sm:ml-6 sm:block">
-                <div className="flex space-x-4">
-                  {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      onClick={() => changeDashboard(item.name)}
-                      aria-current={item.current ? 'page' : undefined}
-                      className={classNames(
-                        item.current ? (
-                          'bg-gray-900 text-white' 
-                        ) : (
-                          'text-black-300 hover:bg-gray-700 hover:text-white'
-                        ),
-                        'rounded-md px-3 py-2 text-sm font-medium'
-                      )}
-                    >
-                      {item.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Disclosure>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#link">Link</Nav.Link>
+              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
     </header>
-  )
+  );
 }
