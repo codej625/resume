@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header>
       <Navbar expand="lg" className="bg-body-tertiary">
-        <Container fluid className="mx-3">
+        <Container className="mx-3">
           <Navbar.Brand href="#">Portfolio</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
