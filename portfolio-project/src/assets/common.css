@@ -1,0 +1,35 @@
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.personal-information-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.personal-information-body > div:nth-child(1) {
+  width: 800px;
+  height: 500px;
+  border: 1px solid;
+}
+
+.personal-information-body > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 435px;
+  height: 500px;
+}
+
+.personal-information-body > div:nth-child(2) > div:nth-child(1) {
+  width: 440px;
+  height: 240px;
+  border: 1px solid;
+}
+
+.personal-information-body > div:nth-child(2) > div:nth-child(2) {
+  width: 440px;
+  height: 240px;
+  border: 1px solid;
+}

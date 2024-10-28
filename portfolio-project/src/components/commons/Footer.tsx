@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="bg-body-tertiary pt-3">
-        <Container fluid>
+        <Container className="container">
           <div className="row">
             <div className="col">
               <div className="footer__title"></div>
