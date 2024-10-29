@@ -5,7 +5,7 @@ import './../../assets/common.css'
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="bg-body-tertiary pt-3">
+      <div className="bg-body-tertiary pt-3 pb-3">
         <Container className="container">
           <div className="row">
             <div className="col">

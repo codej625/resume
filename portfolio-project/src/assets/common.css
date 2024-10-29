@@ -1,3 +1,11 @@
+p, figure {
+  margin: 0;
+}
+
+section {
+  margin-top: 25px;
+}
+
 .container {
   width: 1280px;
   margin: 0 auto;
@@ -9,9 +17,13 @@
 }
 
 .personal-information-body > div:nth-child(1) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 800px;
   height: 500px;
   border: 1px solid;
+  border-radius: 16px;
 }
 
 .personal-information-body > div:nth-child(2) {
@@ -26,10 +38,75 @@
   width: 440px;
   height: 240px;
   border: 1px solid;
+  border-radius: 16px;
 }
 
 .personal-information-body > div:nth-child(2) > div:nth-child(2) {
   width: 440px;
   height: 240px;
   border: 1px solid;
+  border-radius: 16px;
+}
+
+.personal-information-body .identification-picture {
+  width: 200px;
+  height: 292px;
+  border: 1px solid;
+  box-sizing: content-box;
+  border-radius: 16px;
+}
+
+.personal-information-body .identification-picture > figure {
+  width: 200px;
+}
+
+.personal-information-body .identification-picture > figure > img {
+  width: 200px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.personal-information-body .self-introduction {
+  width: 500px;
+  border: 1px solid;
+  border-radius: 16px;
+}
+
+.personal-information-body .self-introduction p {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 100%;
+    overflow: hidden;
+  }
 }
