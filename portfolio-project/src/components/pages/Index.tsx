@@ -11,9 +11,9 @@ export default function Main() {
             <div className="container">
               <div className="personal-information-body">
                 <div>
-                  <div className="self-introduction p-4">
+                  <div className="self-introduction bg-body-tertiary p-4">
                     <p><strong>간략 소개</strong></p><br />
-                    <span>"뛰어난 1명의 개발자는 하나의 기업가치를 가진다"</span>라는<br />
+                    <strong>"뛰어난 1명의 개발자는 하나의 기업가치를 가진다"</strong>라는<br />
                     신념을 갖고 있습니다.<br />
                     <br />
                     제가 잘하는 일은 문제를 인식하고,<br />
@@ -31,7 +31,27 @@ export default function Main() {
                       <img src="./../public/identification_picture.jpg" alt="identification picture" />
                       <figcaption></figcaption>
                     </figure>
-                    <p className="text-center">풀스택 개발자 이진우</p>
+                    <div>
+                      <br />
+                      <table className="text-center">
+                        <tr>
+                          <th>이름</th>
+                          <td>이진우</td>
+                        </tr>
+                        <tr>
+                          <th>생년월일</th>
+                          <td>91.06.25</td>
+                        </tr>
+                        <tr>
+                          <th>전화번호</th>
+                          <td>010-2269-5901</td>
+                        </tr>
+                        <tr>
+                          <th>주소</th>
+                          <td>경기도 군포시 금정동</td>
+                        </tr>
+                      </table>
+                    </div>
                   </div>
                 </div>
                 <div>

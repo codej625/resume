@@ -50,10 +50,7 @@ section {
 
 .personal-information-body .identification-picture {
   width: 200px;
-  height: 292px;
-  border: 1px solid;
   box-sizing: content-box;
-  border-radius: 16px;
 }
 
 .personal-information-body .identification-picture > figure {
@@ -62,13 +59,10 @@ section {
 
 .personal-information-body .identification-picture > figure > img {
   width: 200px;
-  border-top-right-radius: 16px;
-  border-top-left-radius: 16px;
 }
 
 .personal-information-body .self-introduction {
   width: 500px;
-  border: 1px solid;
   border-radius: 16px;
 }
 
@@ -76,6 +70,7 @@ section {
   font-weight: 600;
   font-size: 1.3rem;
 }
+
 @media (min-width: 1400px) {
   .container {
     max-width: 100%;
