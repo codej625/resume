@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="footer__title"></div>
               <div>
                 <p>Email dkwksla@naver.com</p> 
-                <p>Phone <a href="tel:01012345678">010-2269-5901</a></p>
+                <p>Phone <a href="tel:01022695901">010-2269-5901</a></p>
               </div>
             </div>
           </div>

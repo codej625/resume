@@ -1,9 +1,10 @@
-p, figure {
+p, figure, a {
   margin: 0;
+  text-decoration: none;
 }
 
 section {
-  margin-top: 25px;
+  margin-top: 3rem;
 }
 
 .container {
@@ -18,11 +19,10 @@ section {
 
 .personal-information-body > div:nth-child(1) {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 800px;
   height: 500px;
-  border: 1px solid;
   border-radius: 16px;
 }
 
@@ -49,21 +49,17 @@ section {
 }
 
 .personal-information-body .identification-picture {
-  width: 200px;
+  width: 220px;
   box-sizing: content-box;
 }
 
-.personal-information-body .identification-picture > figure {
-  width: 200px;
-}
-
 .personal-information-body .identification-picture > figure > img {
-  width: 200px;
+  width: 220px;
+  border-radius: 16px;
 }
 
 .personal-information-body .self-introduction {
   width: 500px;
-  border-radius: 16px;
 }
 
 .personal-information-body .self-introduction p {
