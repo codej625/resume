@@ -1,6 +1,8 @@
 import Header from "./../commons/Header";
 import Footer from "./../commons/Footer";
-import "./../../assets/common.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./../../assets/css/common.css";
+import identificationPicture from "./../../assets/img/identification_picture.jpg";
 
 export default function Main() {
   return (
@@ -37,7 +39,7 @@ export default function Main() {
                   </div>
                   <div className="identification-picture">
                     <figure>
-                      <img src="./../public/identification_picture.jpg" alt="identification picture" />
+                      <img src={identificationPicture} alt="identification picture" />
                       <figcaption></figcaption>
                     </figure>
                     <div className="mt-3">
@@ -45,7 +47,7 @@ export default function Main() {
                         <tbody>
                           <tr>
                             <th>이름</th>
-                            <td className="text-center">이 진 우 / Jin-woo Lee</td>
+                            <td className="text-center">이 진 우</td>
                           </tr>
                           <tr>
                             <th>생년월일</th>
@@ -69,11 +71,45 @@ export default function Main() {
                   </div>
                 </div>
                 <div>
-                  <div>
-                    second
+                  <div className="p-4">
+                    <h3 className="fs-4 fw-bold">Core Skills</h3>
+                    <div>
+                      <div className="d-flex mt-3">
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Java</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Spring Boot</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Thymeleaf</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2">JSP</div>
+                      </div>
+                      <div className="d-flex mt-2">
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Javascript</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">React</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Zustand</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2">TanStack Query</div>
+                      </div>
+                      <div className="d-flex mt-2">
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">MySQL</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">PostgreSQL</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">AWS</div>
+                        <div className="border rounded-5 bg-body-tertiary p-2">HTML5 / CSS3</div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    third
+                  <div className="p-4">
+                    <h3 className="fs-4 fw-bold">Additional Skills</h3>
+                    <div>
+                      <div className="d-flex mt-3">
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
+                        <div className="border rounded-5 bg-body-tertiary p-2"></div>
+                      </div>
+                      <div className="d-flex mt-2">
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
+                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
+                        <div className="border rounded-5 bg-body-tertiary p-2"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

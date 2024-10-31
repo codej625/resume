@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
-import './../../assets/common.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "./../../assets/css/common.css";
 
 
 export default function Footer() {
