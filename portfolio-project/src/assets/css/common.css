@@ -46,15 +46,15 @@ section {
 .personal-information-body > div:nth-child(2) > div:nth-child(1) {
   width: 440px;
   height: 240px;
-  border: 1px solid;
   border-radius: 16px;
+  background-color: #e2f7ff;
 }
 
 .personal-information-body > div:nth-child(2) > div:nth-child(2) {
   width: 440px;
   height: 240px;
-  border: 1px solid;
   border-radius: 16px;
+  background-color: #fff0f0;
 }
 
 .personal-information-body .identification-picture {

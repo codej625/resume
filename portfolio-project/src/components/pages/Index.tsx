@@ -63,7 +63,7 @@ export default function Main() {
                           </tr>
                           <tr>
                             <th>주소</th>
-                            <td className="text-center">경기도 군포시 금정동</td>
+                            <td className="text-center">🇰🇷 경기도 군포시 금정동</td>
                           </tr>
                         </tbody>
                       </table>
@@ -72,42 +72,45 @@ export default function Main() {
                 </div>
                 <div>
                   <div className="p-4">
-                    <h3 className="fs-4 fw-bold">Core Skills</h3>
+                    <h3 className="fs-4 fw-bold">⚔️ Core Skills</h3>
                     <div>
                       <div className="d-flex mt-3">
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Java</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Spring Boot</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Thymeleaf</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2">JSP</div>
+                        <div className="rounded-5 bg-white p-2 me-2">Java</div>
+                        <div className="rounded-5 bg-white p-2 me-2">Spring Boot</div>
+                        <div className="rounded-5 bg-white p-2 me-2">Thymeleaf</div>
+                        <div className="rounded-5 bg-white p-2">JSP</div>
                       </div>
                       <div className="d-flex mt-2">
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Javascript</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">React</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">Zustand</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2">TanStack Query</div>
+                        <div className="rounded-5 bg-white p-2 me-2">Javascript</div>
+                        <div className="rounded-5 bg-white p-2 me-2">React</div>
+                        <div className="rounded-5 bg-white p-2 me-2">jQuery</div>
+                        <div className="rounded-5 bg-white p-2">Zustand</div>
                       </div>
                       <div className="d-flex mt-2">
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">MySQL</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">PostgreSQL</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2">AWS</div>
-                        <div className="border rounded-5 bg-body-tertiary p-2">HTML5 / CSS3</div>
+                        <div className="rounded-5 bg-white p-2 me-2">React Query</div>
+                        <div className="rounded-5 bg-white p-2 me-2">MySQL</div>
+                        <div className="rounded-5 bg-white p-2 me-2">PostgreSQL</div>
+                        <div className="rounded-5 bg-white p-2">AWS</div>
                       </div>
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="fs-4 fw-bold">Additional Skills</h3>
+                    <h3 className="fs-4 fw-bold">🛡️ Additional Skills</h3>
                     <div>
                       <div className="d-flex mt-3">
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
-                        <div className="border rounded-5 bg-body-tertiary p-2"></div>
+                        <div className="rounded-5 bg-white p-2 me-2">Node.js</div>
+                        <div className="rounded-5 bg-white p-2 me-2">Express</div>
+                        <div className="rounded-5 bg-white p-2">PHP(Legacy version 5.x)</div>
                       </div>
                       <div className="d-flex mt-2">
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
-                        <div className="border rounded-5 bg-body-tertiary p-2 me-2"></div>
-                        <div className="border rounded-5 bg-body-tertiary p-2"></div>
+                        <div className="rounded-5 bg-white p-2 me-2">Docker</div>
+                        <div className="rounded-5 bg-white p-2 me-2">HTML5</div>
+                        <div className="rounded-5 bg-white p-2 me-2">CSS3</div>
+                        <div className="rounded-5 bg-white p-2">Web Publishing</div>
+                      </div>
+                      <div className="d-flex mt-2">
+                        <div className="rounded-5 bg-white p-2 me-2">Linux(Ubuntu)</div>
+                        <div className="rounded-5 bg-white p-2">Git / GitHub</div>
                       </div>
                     </div>
                   </div>
