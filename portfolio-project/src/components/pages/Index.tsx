@@ -130,10 +130,10 @@ export default function Main() {
                         <td className="text-center">필</td>
                         <th>군별</th>
                         <td className="text-center">전투경찰</td>
-                      </tr>
-                      <tr>
                         <th>최종계급</th>
                         <td className="text-center">병장</td>
+                      </tr>
+                      <tr>
                         <th>복무기간</th>
                         <td className="text-center">2012.12.06 ~ 2014.09.05</td>
                       </tr>
