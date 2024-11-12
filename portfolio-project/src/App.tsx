@@ -6,8 +6,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/home" element={<Navigate to="/" replace />} />
-        <Route path="/index" element={<Index />} />
+        <Route path="/index" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

@@ -72,7 +72,7 @@ export default function Main() {
                 </div>
                 <div>
                   <div className="p-4">
-                    <h3 className="fs-4 fw-bold">⚔️ Core Skills</h3>
+                    <h3 className="fs-4 fw-bold">1️⃣ Core Skills</h3>
                     <div>
                       <div className="d-flex mt-3">
                         <div className="rounded-5 bg-white p-2 me-2">Java</div>
@@ -95,7 +95,7 @@ export default function Main() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <h3 className="fs-4 fw-bold">🛡️ Additional Skills</h3>
+                    <h3 className="fs-4 fw-bold">2️⃣ Additional Skills</h3>
                     <div>
                       <div className="d-flex mt-3">
                         <div className="rounded-5 bg-white p-2 me-2">Node.js</div>
@@ -118,38 +118,28 @@ export default function Main() {
               </div>
             </div>
           </section>
-          <section id="selfIntroduction">
+          <section>
             <div className="container">
-              <div className="self-introduction-body">
-                
-              </div>
-            </div>
-          </section>
-          <section id="workExperience">
-            <div className="container">
-              <div className="work-experience-body">
-                
-              </div>
-            </div>
-          </section>
-          <section id="projects">
-            <div className="container">
-              <div className="projects-body">
-                
-              </div>
-            </div>
-          </section>
-          <section id="skills">
-            <div className="container">
-              <div className="skills-body">
-                
-              </div>
-            </div>
-          </section>
-          <section id="others">
-            <div className="container">
-              <div className="others-body">
-                
+              <div>
+                <div className="bg-body-tertiary p-4">
+                  <h3 className="fs-4 fw-bold mb-3">🪖 병역 사항</h3>
+                  <table className="w-100">
+                    <tbody>
+                      <tr>
+                        <th>병역구분</th>
+                        <td className="text-center">필</td>
+                        <th>군별</th>
+                        <td className="text-center">전투경찰</td>
+                      </tr>
+                      <tr>
+                        <th>최종계급</th>
+                        <td className="text-center">병장</td>
+                        <th>복무기간</th>
+                        <td className="text-center">2012.12.06 ~ 2014.09.05</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </section>

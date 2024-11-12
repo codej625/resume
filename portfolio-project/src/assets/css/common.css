@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* common */
 body {
   font-family: "Noto Sans KR", serif;
   font-optical-sizing: auto;
@@ -13,7 +14,7 @@ p, figure, a {
 }
 
 section {
-  margin-top: 3rem;
+  margin: 3rem 0;
 }
 
 .container {
@@ -21,7 +22,10 @@ section {
   margin: 0 auto;
 }
 
-.personal-information-body {
+
+/* personal information */
+section:nth-child(1) > div > div,
+section:nth-child(2) > div > div {
   display: flex;
   justify-content: space-between;
 }
@@ -31,7 +35,6 @@ section {
   justify-content: space-between;
   align-items: center;
   width: 800px;
-  height: 500px;
   border-radius: 16px;
 }
 
@@ -40,18 +43,15 @@ section {
   flex-direction: column;
   justify-content: space-between;
   width: 435px;
-  height: 500px;
 }
 
 .personal-information-body > div:nth-child(2) > div:nth-child(1) {
-  width: 440px;
   height: 240px;
   border-radius: 16px;
   background-color: #e2f7ff;
 }
 
 .personal-information-body > div:nth-child(2) > div:nth-child(2) {
-  width: 440px;
   height: 240px;
   border-radius: 16px;
   background-color: #fff0f0;
@@ -76,6 +76,15 @@ section {
   font-size: 1.3rem;
 }
 
+
+/* military duty */
+section:nth-child(2) > .container > div > div {
+  border-radius: 16px;
+  width: 100%;
+}
+
+
+/* */
 @media (min-width: 1400px) {
   .container {
     max-width: 100%;
