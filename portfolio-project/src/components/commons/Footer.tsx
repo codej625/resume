@@ -11,9 +11,13 @@ export default function Footer() {
           <div className="row">
             <div className="col">
               <div className="footer__title"></div>
-              <div>
-                <p>Email dkwksla@naver.com</p> 
-                <p>Phone <a href="tel:01022695901">010-2269-5901</a></p>
+              <div className="d-flex justify-content-center">
+                <div className="pe-1">✉️</div>
+                <div className="pe-5 gradient-color">dkwksla@naver.com</div>
+                <div className="pe-1">📞</div>
+                <div className="pe-5"><a className="gradient-color" href="tel:01022695901">010-2269-5901</a></div>
+                <div className="pe-1">💻</div>
+                <div className="gradient-color">codej625</div>
               </div>
             </div>
           </div>

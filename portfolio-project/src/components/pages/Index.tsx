@@ -1,5 +1,7 @@
 import Header from "./../commons/Header";
 import Footer from "./../commons/Footer";
+import Slider from "./MultipleItems";
+import { workExperience, option } from "../../assets/js/data.ts";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./../../assets/css/common.css";
 import identificationPicture from "./../../assets/img/identification_picture.jpg";
@@ -18,22 +20,28 @@ export default function Main() {
                     <br />
                     <p className="fs-6 fw-normal">
                       <strong>"뛰어난 1명의 개발자는 하나의 기업가치를 가진다"</strong>
-                      라는<br />신념을 갖고 있습니다.
+                      라는
+                      <br />
+                      신념을 갖고 있습니다.
                     </p>
                     <br />
                     <p className="fs-6 fw-normal">
-                      제가 잘하는 일은 문제를 인식하고,<br />
+                      제가 잘하는 일은 문제를 인식하고,
+                      <br />
                       다양한 역할을 수행하며 해결하는 것입니다.
                     </p>
                     <br />
                     <p className="fs-6 fw-normal">
-                      요구사항을 파악하여 기술적인 해결책을 제시하고<br />
-                      팀원, 협력부서 더 나아가 클라이언트와의<br />
+                      요구사항을 파악하여 기술적인 해결책을 제시하고
+                      <br />
+                      팀원, 협력부서 더 나아가 클라이언트와의
+                      <br />
                       원활한 커뮤니케이션 능력을 갖추고 있습니다.
                     </p>
                     <br />
                     <p className="fs-6 fw-normal">
-                      항상 겸손한 마음가짐으로 여러 경험을 쌓으며<br />
+                      항상 겸손한 마음가짐으로 여러 경험을 쌓으며
+                      <br />
                       현재도 계속해서 발전해 나가고 있습니다.
                     </p>
                   </div>
@@ -55,7 +63,9 @@ export default function Main() {
                           </tr>
                           <tr>
                             <th>전화번호</th>
-                            <td className="text-center"><a href="tel:01022695901">010-2269-5901</a></td>
+                            <td className="text-center">
+                              <a href="tel:01022695901">📞 010-2269-5901</a>
+                            </td>
                           </tr>
                           <tr>
                             <th>이메일</th>
@@ -71,8 +81,8 @@ export default function Main() {
                   </div>
                 </div>
                 <div>
-                  <div className="p-4">
-                    <h3 className="fs-4 fw-bold">1️⃣ Core Skills</h3>
+                  <div className="bg-body-tertiary p-4">
+                    <h3 className="fs-4 fw-bold">🥇 Core Skills</h3>
                     <div>
                       <div className="d-flex mt-3">
                         <div className="rounded-5 bg-white p-2 me-2">Java</div>
@@ -94,8 +104,8 @@ export default function Main() {
                       </div>
                     </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="fs-4 fw-bold">2️⃣ Additional Skills</h3>
+                  <div className="bg-body-tertiary p-4">
+                    <h3 className="fs-4 fw-bold">🥈 Additional Skills</h3>
                     <div>
                       <div className="d-flex mt-3">
                         <div className="rounded-5 bg-white p-2 me-2">Node.js</div>
@@ -118,27 +128,90 @@ export default function Main() {
               </div>
             </div>
           </section>
-          <section>
+          <section style={{marginTop: '1.4rem'}}>
             <div className="container">
               <div>
                 <div className="bg-body-tertiary p-4">
                   <h3 className="fs-4 fw-bold mb-3">🪖 병역 사항</h3>
-                  <table className="w-100">
+                  <table>
                     <tbody>
-                      <tr>
+                      <tr className="d-flex justify-content-center align-items-center" style={{width: 1200}}>
                         <th>병역구분</th>
-                        <td className="text-center">필</td>
+                        <td className="ps-3 pe-5">
+                          <div className="text-center rounded-5 bg-white pt-2 pb-2">필</div>
+                        </td>
                         <th>군별</th>
-                        <td className="text-center">전투경찰</td>
+                        <td className="ps-3 pe-5">
+                          <div className="text-center rounded-5 bg-white pt-2 pb-2">전투경찰</div>
+                        </td>
                         <th>최종계급</th>
-                        <td className="text-center">병장</td>
-                      </tr>
-                      <tr>
+                        <td className="ps-3 pe-5">
+                          <div className="text-center rounded-5 bg-white pt-2 pb-2">병장</div>
+                        </td>
                         <th>복무기간</th>
-                        <td className="text-center">2012.12.06 ~ 2014.09.05</td>
+                        <td className="ps-3 w-auto">
+                          <div className="text-center rounded-5 bg-white px-5 pt-2 pb-2">2012.12.06 ~ 2014.09.05</div>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section style={{marginTop: '1.4rem'}}>
+            <div className="container">
+              <div>
+                <div className="bg-body-tertiary p-4">
+                  <h3 className="fs-4 fw-bold mb-3">🎓 학력</h3>
+                  <div className="d-flex">
+                    <article className="ps-2" style={{ width: 250 }}>
+                      <div className="text-end rounded-5 bg-white p-4">
+                        <div className="d-flex justify-content-center">
+                          <div className="d-flex flex-column">
+                            <h5 className="text-center m-0 me-2">서울디지털대학교</h5>
+                            <div className="text-center fs-8 mt-1">💻 컴퓨터공학전공</div>
+                            <div className="text-black-50 fs-8 mt-3">2022.03 ~ 2024.02 졸업</div>
+                            <div className="text-black-50 fs-8">학점 3.19/4.5</div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                     <article className="ps-4" style={{ width: 250 }}>
+                      <div className="text-end rounded-5 bg-white p-4">
+                        <div className="d-flex justify-content-center">
+                          <div className="d-flex flex-column">
+                            <h5 className="text-center m-0 me-2">학점은행제</h5>
+                            <div className="text-center fs-8 mt-1">💵 경영 전공</div>
+                            <div className="text-black-50 fs-8 mt-3">2019.08 ~ 2021.02 졸업</div>
+                            <div className="text-black-50 fs-8">학점 3.13/4.5</div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <article className="ps-4" style={{ width: 250 }}>
+                      <div className="text-end rounded-5 bg-white p-4">
+                        <div className="d-flex justify-content-center">
+                          <div className="d-flex flex-column">
+                            <h5 className="text-center m-0 me-2">소사고등학교</h5>
+                            <div className="text-center fs-8 mt-1">📖 문과</div>
+                            <div className="text-black-50 fs-8 mt-3">2007.03 ~ 2010.02 졸업</div>
+                            <div className="text-white">-</div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section style={{marginTop: '1.4rem'}}>
+            <div className="container">
+              <div className="work-experience-body">
+                <div className="bg-body-tertiary p-4">
+                  <h3 className="fs-4 fw-bold mb-3">📁 경력 사항</h3>
+                  <Slider data={workExperience} option={option} />
                 </div>
               </div>
             </div>
