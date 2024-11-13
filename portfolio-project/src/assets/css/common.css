@@ -14,8 +14,12 @@ p, figure, a {
   color: #212529;
 }
 
-section {
-  margin-top: 3rem;
+header {
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  margin-top: 1.5rem;
 }
 
 .container {
