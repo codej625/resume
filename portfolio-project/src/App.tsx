@@ -3,10 +3,10 @@ import Index from "./components/pages/Index";
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<Index />} />
-        <Route path="/index" element={<Navigate to="/" replace />} />
+        <Route path={import.meta.env.VITE_APP_BASE_URL} element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );

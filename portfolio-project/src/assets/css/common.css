@@ -52,7 +52,7 @@ section:nth-child(2) > div > div {
   align-items: center;
   width: 800px;
   border-radius: 16px;
-  border: 1px solid #212529;
+  border: 1px solid #dedede;
 }
 
 .personal-information-body > div:nth-child(2) {
@@ -66,14 +66,14 @@ section:nth-child(2) > div > div {
   width: 435px;
   height: 242px;
   border-radius: 16px;
-  border: 1px solid #212529;
+  border: 1px solid #dedede;
 }
 
 .personal-information-body > div:nth-child(2) > div:nth-child(2) {
   width: 435px;
   height: 242px;
   border-radius: 16px;
-  border: 1px solid #212529;
+  border: 1px solid #dedede;
 }
 
 .personal-information-body .identification-picture {
@@ -100,7 +100,7 @@ section:nth-child(2) > div > div {
 section:nth-child(2) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
-  border: 1px solid #212529;
+  border: 1px solid #dedede;
 }
 
 section:nth-child(2) table td {
@@ -112,7 +112,7 @@ section:nth-child(2) table td {
 section:nth-child(3) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
-  border: 1px solid #212529;
+  border: 1px solid #dedede;
 }
 
 
@@ -120,7 +120,7 @@ section:nth-child(3) > .container > div > div {
 section:nth-child(4) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
-  border: 1px solid #212529;
+  border: 1px solid #dedede;
 }
 
 
