@@ -10,7 +10,8 @@ export default function Header() {
     <header>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container className="container">
-          <Navbar.Brand href="/index">Portfolio</Navbar.Brand>
+          <Navbar.Brand>Portfolio</Navbar.Brand>
+          {/* <Navbar.Brand href="/index">Portfolio</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
