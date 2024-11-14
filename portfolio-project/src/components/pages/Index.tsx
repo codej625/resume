@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Header from "./../commons/Header";
 import Footer from "./../commons/Footer";
 import Slider from "./MultipleItems";
@@ -7,10 +8,19 @@ import "./../../assets/css/common.css";
 import identificationPicture from "./../../assets/img/identification_picture.jpg";
 
 export default function Main() {
+
+  const [device, setDevice] = useState<number>(0);
+  const size = useRef<any>(null);
+
+  useEffect(() => {
+    const main: number = size.current?.offsetWidth;
+    if (main) setDevice(main);
+  }, []);
+
   return (
     <>
       <Header />
-        <main>
+        <main ref={size}>
           <section id="personalInformation">
             <div className="container">
               <div className="personal-information-body">
@@ -211,7 +221,7 @@ export default function Main() {
               <div className="work-experience-body">
                 <div className="bg-body-tertiary p-4">
                   <h3 className="fs-4 fw-bold mb-3">📁 경력 사항</h3>
-                  <Slider data={workExperience} option={option} />
+                  <Slider data={workExperience} option={option} device={device} />
                 </div>
               </div>
             </div>

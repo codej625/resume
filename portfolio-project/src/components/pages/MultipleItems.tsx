@@ -18,7 +18,7 @@ export default function MultipleItems({ ...data }) {
     infinite: false,
     arrows: false,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: data.device > 1264 ? 3 : 1,
     slidesToScroll: 1,
   };
 

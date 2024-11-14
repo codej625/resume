@@ -159,3 +159,126 @@ section:nth-child(4) > .container > div > div {
     overflow: hidden;
   }
 }
+
+/* 576px 미만에 적용 */
+@media (max-width: 1280px) {
+
+  /* Common */
+  .container {
+    max-width: auto;
+  }
+  
+  section:nth-child(1) > .container,
+  section:nth-child(2) > .container,
+  section:nth-child(3) > .container,
+  section:nth-child(4) > .container {
+    width: auto;
+  }
+
+  header .container {
+    width: auto;
+  }
+
+  header .container .navbar-brand {
+    margin: 0;
+  }
+
+  header button {
+    display: none;
+  }
+  
+  footer .container {
+    width: auto;
+  }
+
+  footer .container .col div:nth-child(2) {
+    flex-direction: column;
+  }
+
+
+  /* section1 */
+  section:nth-child(1) > .container > div {
+    flex-direction: column;
+  }
+
+  section:nth-child(1) > .container > div > div:nth-child(1) {
+    width: auto;
+    flex-direction: column;
+  }
+
+  section:nth-child(1) > .container > div > div:nth-child(1) > div:nth-child(1) {
+    width: auto;
+    margin-bottom: 2rem;
+  }
+
+  section:nth-child(1) > .container > div > div:nth-child(2) {
+    width: auto;
+  }
+
+  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(1),
+  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(2) {
+    width: auto;
+    height: auto;
+    font-size: 0.8rem;
+    margin-top: 1.4rem;
+  }
+
+  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(1) > div > div,
+  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(2) > div > div {
+    justify-content: center;
+  }
+
+
+  /* section 2 */
+  section:nth-child(2) > .container > div {
+    width: auto;
+  }
+
+  section:nth-child(2) table {
+    margin: 0 auto;
+  }
+
+  section:nth-child(2) table tr {
+    flex-direction: column;
+    width: auto !important;
+  }
+
+  section:nth-child(2) table td {
+    padding: 0.5rem 0 !important;
+  }
+
+
+  /* section 3 */
+  section:nth-child(3) > .container > div > div {
+    width: auto;
+  }
+
+  section:nth-child(3) > .container > div > div > div:nth-child(2) {
+    flex-direction: column;
+  }
+
+  section:nth-child(3) > .container > div > div > div:nth-child(2) article {
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+
+  section:nth-child(3) > .container > div > div > div:nth-child(2) article:nth-child(2) {
+    padding: 1rem 0;
+    padding-left: 0 !important;
+    width: auto !important;
+  }
+
+  
+  /* section 4 */
+  section:nth-child(4) > .container > div > div {
+    width: auto;
+  }
+
+  section:nth-child(4) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(2) > div {
+    font-size: 0.8rem;
+  }
+
+  section:nth-child(4) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(1) span {
+    display: none;
+  }
+}
