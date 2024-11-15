@@ -39,7 +39,7 @@ footer {
 }
 
 
-/* personal information */
+/* Personal information */
 section:nth-child(1) > div > div,
 section:nth-child(2) > div > div {
   display: flex;
@@ -96,7 +96,7 @@ section:nth-child(2) > div > div {
 }
 
 
-/* military duty */
+/* Military duty */
 section:nth-child(2) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
@@ -108,7 +108,7 @@ section:nth-child(2) table td {
 }
 
 
-/* educational background */
+/* Educational background */
 section:nth-child(3) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
@@ -116,8 +116,16 @@ section:nth-child(3) > .container > div > div {
 }
 
 
-/* work Experience */
+/* Honors */
 section:nth-child(4) > .container > div > div {
+  border-radius: 16px;
+  width: 1256px;
+  border: 1px solid #dedede;
+}
+
+
+/* Work Experience */
+section:nth-child(5) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
   border: 1px solid #dedede;
@@ -171,7 +179,8 @@ section:nth-child(4) > .container > div > div {
   section:nth-child(1) > .container,
   section:nth-child(2) > .container,
   section:nth-child(3) > .container,
-  section:nth-child(4) > .container {
+  section:nth-child(4) > .container,
+  section:nth-child(5) > .container {
     width: auto;
   }
 
@@ -196,7 +205,7 @@ section:nth-child(4) > .container > div > div {
   }
 
 
-  /* section1 */
+  /* section 1 */
   section:nth-child(1) > .container > div {
     flex-direction: column;
   }
@@ -268,17 +277,36 @@ section:nth-child(4) > .container > div > div {
     width: auto !important;
   }
 
-  
+
   /* section 4 */
   section:nth-child(4) > .container > div > div {
     width: auto;
   }
 
-  section:nth-child(4) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(2) > div {
+  section:nth-child(4) table {
+    margin: 0 auto;
+  }
+
+  section:nth-child(4) table tr {
+    flex-direction: column;
+    width: auto !important;
+  }
+
+  section:nth-child(4) table td {
+    padding: 0.5rem 0 !important;
+  }
+
+  
+  /* section 5 */
+  section:nth-child(5) > .container > div > div {
+    width: auto;
+  }
+
+  section:nth-child(5) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(2) > div {
     font-size: 0.8rem;
   }
 
-  section:nth-child(4) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(1) span {
+  section:nth-child(5) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(1) span {
     display: none;
   }
 }

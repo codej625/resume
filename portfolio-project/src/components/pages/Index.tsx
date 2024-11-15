@@ -218,6 +218,37 @@ export default function Main() {
           </section>
           <section style={{marginTop: '1.4rem'}}>
             <div className="container">
+              <div className="honors-body">
+                <div className="bg-body-tertiary p-4">
+                  <h3 className="fs-4 fw-bold mb-3">🏆 수상 경력</h3>
+                  <table>
+                    <tbody>
+                      <tr className="d-flex justify-content-center align-items-center" style={{width: 1200}}>
+                        <th>수상명</th>
+                        <td className="ps-3 pe-5">
+                          <div className="text-center rounded-5 bg-white px-3 pt-2 pb-2">애드테크 은상</div>
+                        </td>
+                        <th>수여기관</th>
+                        <td className="ps-3 pe-5">
+                          <div className="text-center rounded-5 bg-white px-3 pt-2 pb-2">(사)한국디지털광고협회</div>
+                        </td>
+                        <th>수상연도</th>
+                        <td className="ps-3 pe-5">
+                          <div className="text-center rounded-5 bg-white px-2 pt-2 pb-2">2022</div>
+                        </td>
+                        <th>수여내용</th>
+                        <td className="ps-3 w-auto">
+                          <div className="text-center rounded-5 bg-white px-3 pt-2 pb-2">AI기술을 활용한 디지털마케팅플랫폼, 키딕 (KeyDig)</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section style={{marginTop: '1.4rem'}}>
+            <div className="container">
               <div className="work-experience-body">
                 <div className="bg-body-tertiary p-4">
                   <h3 className="fs-4 fw-bold mb-3">📁 경력 사항</h3>
