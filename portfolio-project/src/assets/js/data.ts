@@ -17,10 +17,10 @@ export const workExperience: RoleData[] = [
     "roles": [
       "Tech Lead",
       "Kiosk 개발",
-      "Kiosk 사용 메뉴얼 작성",
+      "Kiosk 메뉴얼 작성",
       "자사 ERP 고도화",
-      "클라이언트 커뮤니케이션",
-      "기술지원"
+      "Client Communication",
+      "Technical Support"
     ]
   },
   {
@@ -28,14 +28,14 @@ export const workExperience: RoleData[] = [
     "type": "스타트업",
     "period": "2022.01 ~ 2024.04",
     "duration": "2년 4개월",
-    "department": "연구개발전담부서 · 선임",
+    "department": "기업부설연구소 · 선임",
     "roles": [
-      "클라이언트 솔루션 SI / SM",
+      "커스텀 솔루션 SI / SM",
+      "Client Communication",
+      "Technical Support",
       "자사 CRM 개발",
-      "보안 감사 대응",
       "서버 관리(AWS)",
-      "클라이언트 커뮤니케이션",
-      "기술지원"
+      "보안 감사 대응"
     ]
   },
   {
@@ -48,7 +48,7 @@ export const workExperience: RoleData[] = [
       "자사 사이트 유지보수",
       "자사 ERP 유지보수",
       "시스템 사고 처리",
-      "유저 / 단위 테스트 작성",
+      "테스트 작성",
       "영향도 분석",
       "시스템 모니터링"
     ]
