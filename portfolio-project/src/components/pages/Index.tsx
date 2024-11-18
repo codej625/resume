@@ -29,7 +29,7 @@ export default function Main() {
                     <h2 className="fs-2 fw-bold">👤 간략 소개</h2>
                     <br />
                     <p className="fs-6 fw-normal">
-                      <strong>"뛰어난 1명의 개발자는 하나의 기업가치를 가진다"</strong>
+                      <strong>"뛰어난 한 명의 개발자는 하나의 기업가치를 가진다"</strong>
                       라는
                       <br />
                       신념을 갖고 있습니다.
@@ -50,9 +50,9 @@ export default function Main() {
                     </p>
                     <br />
                     <p className="fs-6 fw-normal">
-                      항상 겸손한 마음가짐으로 여러 경험을 쌓으며
+                      항상 겸손한 마음가짐으로 다양한 도전과 경험을 통해
                       <br />
-                      현재도 계속해서 발전해 나가고 있습니다.
+                      기술적으로나 인간적으로 더 나은 개발자가 되기 위해 노력하고 있습니다.
                     </p>
                   </div>
                   <div className="identification-picture">
