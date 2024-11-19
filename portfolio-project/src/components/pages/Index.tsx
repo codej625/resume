@@ -187,8 +187,8 @@ export default function Main() {
                         </div>
                       </div>
                     </article>
-                     <article className="ps-4" style={{ width: 250 }}>
-                      <div className="text-end rounded-5 bg-white p-4">
+                    <article className="ps-4" style={{ width: 250 }}>
+                      {/* <div className="text-end rounded-5 bg-white p-4">
                         <div className="d-flex justify-content-center">
                           <div className="d-flex flex-column">
                             <h5 className="text-center m-0 me-2">학점은행제</h5>
@@ -197,7 +197,7 @@ export default function Main() {
                             <div className="text-black-50 fs-8">학점 3.13/4.5</div>
                           </div>
                         </div>
-                      </div>
+                      </div> */}
                     </article>
                     <article className="ps-4" style={{ width: 250 }}>
                       <div className="text-end rounded-5 bg-white p-4">
