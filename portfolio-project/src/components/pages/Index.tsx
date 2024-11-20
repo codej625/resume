@@ -130,6 +130,7 @@ export default function Main() {
                       </div>
                       <div className="d-flex mt-2">
                         <div className="rounded-5 bg-white p-2 me-2">Linux(Ubuntu)</div>
+                        <div className="rounded-5 bg-white p-2 me-2">Typescript</div>
                         <div className="rounded-5 bg-white p-2">Git / GitHub</div>
                       </div>
                     </div>
