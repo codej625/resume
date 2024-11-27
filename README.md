@@ -1,7 +1,8 @@
-# 포트폴리오 사이트 만들기
+# 이력서 웹 사이트 만들기
 
 <br /><br />
 
 ```
-Github pages를 사용해 프로젝트 시작
+React
+Typescript
 ```
