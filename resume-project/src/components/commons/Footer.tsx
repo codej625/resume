@@ -17,7 +17,7 @@ export default function Footer() {
                 <div className="pe-1">📞</div>
                 <div className="pe-5"><a className="gradient-color" href="tel:01022695901">010-2269-5901</a></div>
                 <div className="pe-1">💻</div>
-                <div className="gradient-color">codej625</div>
+                <div><a className="gradient-color" href="https://github.com/codej625">GitHub</a></div>
               </div>
             </div>
           </div>
