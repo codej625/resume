@@ -50,11 +50,11 @@ export default function Main() {
                   </p>
                   <br />
                   <p className="fs-6 fw-normal">
-                    항상 겸손한 마음가짐으로 다양한 도전과 경험을 통해
+                    항상 겸손한 마음가짐으로,
                     <br />
-                    기술적으로나 인간적으로 더 나은 개발자가 되기 위해 노력하고,
+                    그간 쌓아온 노하우를 십분 활용하여
                     <br />
-                    그동안 쌓인 저의 노하우를 십분 활용하여 조직의 발전에 이바지하고 싶습니다.
+                    조직의 발전에 이바지하고 싶습니다.
                   </p>
                 </div>
                 <div className="identification-picture">
