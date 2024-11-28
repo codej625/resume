@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* Common */
 body {
@@ -8,7 +8,9 @@ body {
   font-style: normal;
 }
 
-p, figure, a {
+p,
+figure,
+a {
   margin: 0;
   text-decoration: none;
   color: #212529;
@@ -37,7 +39,6 @@ footer {
 .fs-8 {
   font-size: 0.9rem;
 }
-
 
 /* Personal information */
 section:nth-child(1) > div > div,
@@ -95,7 +96,6 @@ section:nth-child(2) > div > div {
   font-size: 1.3rem;
 }
 
-
 /* Military duty */
 section:nth-child(2) > .container > div > div {
   border-radius: 16px;
@@ -107,14 +107,12 @@ section:nth-child(2) table td {
   width: 200px;
 }
 
-
 /* Educational background */
 section:nth-child(3) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
   border: 1px solid #dedede;
 }
-
 
 /* Honors */
 section:nth-child(4) > .container > div > div {
@@ -123,14 +121,12 @@ section:nth-child(4) > .container > div > div {
   border: 1px solid #dedede;
 }
 
-
 /* Work Experience */
 section:nth-child(5) > .container > div > div {
   border-radius: 16px;
   width: 1256px;
   border: 1px solid #dedede;
 }
-
 
 /* Responsive */
 @media (min-width: 1400px) {
@@ -168,14 +164,12 @@ section:nth-child(5) > .container > div > div {
   }
 }
 
-/* 576px 미만에 적용 */
 @media (max-width: 1280px) {
-
   /* Common */
   .container {
     max-width: auto;
   }
-  
+
   section:nth-child(1) > .container,
   section:nth-child(2) > .container,
   section:nth-child(3) > .container,
@@ -195,7 +189,7 @@ section:nth-child(5) > .container > div > div {
   header button {
     display: none;
   }
-  
+
   footer .container {
     width: auto;
   }
@@ -203,7 +197,6 @@ section:nth-child(5) > .container > div > div {
   footer .container .col div:nth-child(2) {
     flex-direction: column;
   }
-
 
   /* section 1 */
   section:nth-child(1) > .container > div {
@@ -215,7 +208,11 @@ section:nth-child(5) > .container > div > div {
     flex-direction: column;
   }
 
-  section:nth-child(1) > .container > div > div:nth-child(1) > div:nth-child(1) {
+  section:nth-child(1)
+    > .container
+    > div
+    > div:nth-child(1)
+    > div:nth-child(1) {
     width: auto;
     margin-bottom: 2rem;
   }
@@ -225,18 +222,33 @@ section:nth-child(5) > .container > div > div {
   }
 
   section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(1),
-  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(2) {
+  section:nth-child(1)
+    > .container
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2) {
     width: auto;
     height: auto;
     font-size: 0.8rem;
     margin-top: 1.4rem;
   }
 
-  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(1) > div > div,
-  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(2) > div > div {
+  section:nth-child(1)
+    > .container
+    > div
+    > div:nth-child(2)
+    > div:nth-child(1)
+    > div
+    > div,
+  section:nth-child(1)
+    > .container
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2)
+    > div
+    > div {
     justify-content: center;
   }
-
 
   /* section 2 */
   section:nth-child(2) > .container > div {
@@ -256,7 +268,6 @@ section:nth-child(5) > .container > div > div {
     padding: 0.5rem 0 !important;
   }
 
-
   /* section 3 */
   section:nth-child(3) > .container > div > div {
     width: auto;
@@ -271,12 +282,16 @@ section:nth-child(5) > .container > div > div {
     width: auto !important;
   }
 
-  section:nth-child(3) > .container > div > div > div:nth-child(2) article:nth-child(2) {
+  section:nth-child(3)
+    > .container
+    > div
+    > div
+    > div:nth-child(2)
+    article:nth-child(2) {
     padding: 1rem 0;
     padding-left: 0 !important;
     width: auto !important;
   }
-
 
   /* section 4 */
   section:nth-child(4) > .container > div > div {
@@ -296,17 +311,53 @@ section:nth-child(5) > .container > div > div {
     padding: 0.5rem 0 !important;
   }
 
-  
   /* section 5 */
   section:nth-child(5) > .container > div > div {
     width: auto;
   }
 
-  section:nth-child(5) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(2) > div {
+  section:nth-child(5)
+    > .container
+    > div
+    > div
+    > div
+    .d-flex.justify-content-between
+    > div:nth-child(2)
+    > div {
     font-size: 0.8rem;
   }
 
-  section:nth-child(5) > .container > div > div > div .d-flex.justify-content-between > div:nth-child(1) span {
+  section:nth-child(5)
+    > .container
+    > div
+    > div
+    > div
+    .d-flex.justify-content-between
+    > div:nth-child(1)
+    span {
     display: none;
+  }
+}
+
+/* Samsung galaxy */
+@media (max-width: 360px) {
+  section:nth-child(5)
+    > .container
+    > div
+    > div
+    > div
+    .d-flex.justify-content-between
+    > div:nth-child(2)
+    > div {
+    font-size: 0.7rem;
+  }
+
+  section:nth-child(1) > .container > div > div:nth-child(2) > div:nth-child(1),
+  section:nth-child(1)
+    > .container
+    > div
+    > div:nth-child(2)
+    > div:nth-child(2) {
+    font-size: 0.7rem;
   }
 }
