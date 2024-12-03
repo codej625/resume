@@ -190,7 +190,7 @@ export default function Main() {
                       </div>
                     </div>
                   </article>
-                  <article className="ps-4" style={{ width: 250 }}>
+                  {/* <article className="ps-4" style={{ width: 250 }}>
                     <div className="text-end rounded-5 bg-white p-4">
                       <div className="d-flex justify-content-center">
                         <div className="d-flex flex-column">
@@ -202,7 +202,7 @@ export default function Main() {
                         </div>
                       </div>
                     </div>
-                  </article>
+                  </article> */}
                   <article className="ps-4" style={{ width: 250 }}>
                     <div className="text-end rounded-5 bg-white p-4">
                       <div className="d-flex justify-content-center">
