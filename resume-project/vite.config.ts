@@ -11,7 +11,7 @@ export default defineConfig({
   server: {
     host: '0.0.0.0'
   },
-  base: '/resume/',
+  base: './',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
