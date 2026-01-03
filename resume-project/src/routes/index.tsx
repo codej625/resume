@@ -5,7 +5,7 @@ import Index from "@/pages/index/Index";
 export const router = createBrowserRouter(
   [
     {
-      path: "/",
+      path: "/resume",
       element: <Index />,
     },
     // 추가 라우트가 필요하면 여기에 객체로 추가
@@ -15,12 +15,12 @@ export const router = createBrowserRouter(
     // },
     {
       path: "*",
-      element: <Navigate to="/" replace />,
+      element: <Navigate to="/resume" replace />,
     },
   ],
   {
     // GitHub Pages 서브디렉토리 배포를 위한 basename 설정
-    basename: '/resume',
+    // basename: '/resume',
     // React Router v7 호환성을 위한 future flags
     future: {
       v7_startTransition: true,
