@@ -4,10 +4,10 @@ import "@/assets/css/common.css";
 export default function Header() {
   return (
     <header>
-      <AppBar position="static" sx={{ bgcolor: "background.default", color: "text.primary" }}>
+      <AppBar position="static" elevation={0} sx={{ bgcolor: "primary.main" }}>
         <Container maxWidth="lg">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Toolbar disableGutters>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "white" }}>
               Resume
             </Typography>
             {/* 

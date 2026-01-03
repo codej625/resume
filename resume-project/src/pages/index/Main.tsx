@@ -2,339 +2,445 @@ import {
   Box,
   Container,
   Typography,
-  Paper,
-  Table,
-  TableBody,
-  TableRow,
-  TableCell,
   Chip,
   Stack,
   Link,
+  Paper,
 } from "@mui/material";
 import identificationPicture from "@/assets/img/identification_picture.jpg";
 
 export default function Main() {
   return (
     <main>
-      <section id="personalInformation">
-        <Container maxWidth="lg">
-          <Box className="personal-information-body">
-            <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-              <Box className="self-introduction" sx={{ p: 4 }}>
-                <Typography variant="h4" component="h2" fontWeight="bold" gutterBottom>
-                  👤 간략 소개
-                </Typography>
-                <Typography variant="body1">
-                  <strong>"뛰어난 한 명의 개발자는 하나의 기업가치를 가진다"</strong>
-                  라는
-                  <br />
-                  신념을 갖고 있습니다.
-                </Typography>
-                <Typography variant="body1">
-                  제가 잘하는 일은 문제를 인식하고,
-                  <br />
-                  다양한 역할을 수행하며 해결하는 것입니다.
-                </Typography>
-                <Typography variant="body1">
-                  요구사항을 파악하여 기술적인 해결책을 제시하고
-                  <br />
-                  팀원, 협력부서 더 나아가 클라이언트와의
-                  <br />
-                  원활한 커뮤니케이션 능력을 갖추고 있습니다.
-                </Typography>
-                <Typography variant="body1">
-                  항상 겸손한 마음가짐으로,
-                  <br />
-                  그간 쌓아온 노하우를 십분 활용하여
-                  <br />
-                  조직의 발전에 이바지하고 싶습니다.
-                </Typography>
-              </Box>
-              <Box className="identification-picture">
-                <Box component="figure" sx={{ m: 0 }}>
-                  <Box
-                    component="img"
-                    src={identificationPicture}
-                    alt="identification picture"
-                    sx={{ maxWidth: "100%", height: "auto" }}
-                  />
-                  <Box component="figcaption"></Box>
-                </Box>
-                <Box sx={{ mt: 3 }}>
-                  <Table>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell component="th" scope="row">
-                          이름
-                        </TableCell>
-                        <TableCell align="center">이 진 우</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell component="th" scope="row">
-                          생년월일
-                        </TableCell>
-                        <TableCell align="center">1991.06.25</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell component="th" scope="row">
-                          전화번호
-                        </TableCell>
-                        <TableCell align="center">
-                          <Link href="tel:01022695901">📞 010-2269-5901</Link>
-                        </TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell component="th" scope="row">
-                          이메일
-                        </TableCell>
-                        <TableCell align="center">dkwksla@naver.com</TableCell>
-                      </TableRow>
-                      <TableRow>
-                        <TableCell component="th" scope="row">
-                          주소
-                        </TableCell>
-                        <TableCell align="center">🇰🇷 경기도 군포시 금정동</TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </Box>
-              </Box>
-            </Paper>
-            <Box>
-              <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-                <Typography variant="h5" component="h3" fontWeight="bold" gutterBottom>
-                  🥇 Core Skills
-                </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 3 }}>
-                  <Chip label="Java" sx={{ borderRadius: "25px" }} />
-                  <Chip label="Spring Boot" sx={{ borderRadius: "25px" }} />
-                  <Chip label="Thymeleaf" sx={{ borderRadius: "25px" }} />
-                  <Chip label="JSP" sx={{ borderRadius: "25px" }} />
-                </Stack>
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 2 }}>
-                  <Chip label="Javascript" sx={{ borderRadius: "25px" }} />
-                  <Chip label="React" sx={{ borderRadius: "25px" }} />
-                  <Chip label="jQuery" sx={{ borderRadius: "25px" }} />
-                  <Chip label="Zustand" sx={{ borderRadius: "25px" }} />
-                </Stack>
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 2 }}>
-                  <Chip label="React Query" sx={{ borderRadius: "25px" }} />
-                  <Chip label="SQL" sx={{ borderRadius: "25px" }} />
-                  <Chip label="AWS" sx={{ borderRadius: "25px" }} />
-                </Stack>
-              </Paper>
-              <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-                <Typography variant="h5" component="h3" fontWeight="bold" gutterBottom>
-                  🥈 Additional Skills
-                </Typography>
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 3 }}>
-                  <Chip label="Node.js" sx={{ borderRadius: "25px" }} />
-                  <Chip label="NestJS" sx={{ borderRadius: "25px" }} />
-                  <Chip label="PHP(Legacy version 5.x)" sx={{ borderRadius: "25px" }} />
-                </Stack>
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 2 }}>
-                  <Chip label="Docker" sx={{ borderRadius: "25px" }} />
-                  <Chip label="HTML5" sx={{ borderRadius: "25px" }} />
-                  <Chip label="CSS3" sx={{ borderRadius: "25px" }} />
-                  <Chip label="Web Publishing" sx={{ borderRadius: "25px" }} />
-                </Stack>
-                <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mt: 2 }}>
-                  <Chip label="Linux(Ubuntu)" sx={{ borderRadius: "25px" }} />
-                  <Chip label="Typescript" sx={{ borderRadius: "25px" }} />
-                  <Chip label="Git / GitHub" sx={{ borderRadius: "25px" }} />
-                </Stack>
-              </Paper>
-            </Box>
-          </Box>
-        </Container>
-      </section>
-      <section>
-        <Container maxWidth="lg" sx={{ mt: 2 }}>
-          <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-            <Typography variant="h5" component="h3" fontWeight="bold" sx={{ mb: 3 }}>
-              🪖 병역 사항
-            </Typography>
-            <Table>
-              <TableBody>
-                <TableRow>
-                  <TableCell component="th" scope="row">
-                    병역구분
-                  </TableCell>
-                  <TableCell>
-                    <Chip label="필" sx={{ borderRadius: "25px" }} />
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    군별
-                  </TableCell>
-                  <TableCell>
-                    <Chip label="전투경찰" sx={{ borderRadius: "25px" }} />
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    최종계급
-                  </TableCell>
-                  <TableCell>
-                    <Chip label="병장" sx={{ borderRadius: "25px" }} />
-                  </TableCell>
-                  <TableCell component="th" scope="row">
-                    복무기간
-                  </TableCell>
-                  <TableCell>
-                    <Chip label="2012.12.06 ~ 2014.09.05" sx={{ borderRadius: "25px" }} />
-                  </TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Paper>
-        </Container>
-      </section>
-      <section>
-        <Container maxWidth="lg" sx={{ mt: 2 }}>
-          <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-            <Typography variant="h5" component="h3" fontWeight="bold" sx={{ mb: 3 }}>
-              🎓 학력
-            </Typography>
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={2}
-              sx={{ flexWrap: "wrap" }}
+      <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
+        <Stack direction={{ xs: "column", md: "row" }} spacing={4}>
+          {/* 왼쪽 컬럼 - 인적사항 & 사진 */}
+          <Box sx={{ width: { xs: "100%", md: "33.333%" }, flexShrink: 0 }}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 3,
+                mb: 3,
+                bgcolor: "background.paper",
+                position: "sticky",
+                top: 20,
+              }}
             >
-              <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(33.333% - 16px)" } }}>
-                <Paper
-                  elevation={1}
+              <Box
+                component="img"
+                src={identificationPicture}
+                alt="identification picture"
+                sx={{
+                  width: "100%",
+                  maxWidth: "200px",
+                  height: "auto",
+                  borderRadius: 2,
+                  mb: 3,
+                  display: "block",
+                  mx: "auto",
+                }}
+              />
+              <Box sx={{ mb: 3 }}>
+                <Typography
+                  variant="h4"
+                  component="h1"
                   sx={{
-                    p: 4,
-                    borderRadius: "25px",
+                    mb: 1,
+                    fontWeight: 700,
                     textAlign: "center",
                   }}
                 >
-                  <Typography variant="h6" component="h5" gutterBottom>
+                  이 진 우
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "text.secondary",
+                    textAlign: "center",
+                    mb: 3,
+                  }}
+                >
+                  Full Stack Developer
+                </Typography>
+              </Box>
+
+              <Stack spacing={2}>
+                <Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: 600,
+                    }}
+                  >
+                    연락처
+                  </Typography>
+                  <Link
+                    href="tel:01022695901"
+                    sx={{
+                      color: "text.primary",
+                      textDecoration: "none",
+                      "&:hover": { textDecoration: "underline" },
+                    }}
+                  >
+                    010-2269-5901
+                  </Link>
+                </Box>
+                <Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: 600,
+                    }}
+                  >
+                    이메일
+                  </Typography>
+                  <Typography variant="body2">dkwksla@naver.com</Typography>
+                </Box>
+                <Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: 600,
+                    }}
+                  >
+                    주소
+                  </Typography>
+                  <Typography variant="body2">경기도 군포시 금정동</Typography>
+                </Box>
+                <Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: 600,
+                    }}
+                  >
+                    생년월일
+                  </Typography>
+                  <Typography variant="body2">1991.06.25</Typography>
+                </Box>
+                <Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: 600,
+                    }}
+                  >
+                    GitHub
+                  </Typography>
+                  <Typography variant="body2">https://github.com/codej625</Typography>
+                </Box>
+              </Stack>
+            </Paper>
+          </Box>
+
+          {/* 오른쪽 컬럼 - 본문 내용 */}
+          <Box sx={{ flex: 1, minWidth: 0 }}>
+            {/* 간략 소개 */}
+            <Paper elevation={2} sx={{ p: 4, mb: 3, bgcolor: "background.paper" }}>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 600,
+                  pb: 2,
+                  borderBottom: "2px solid",
+                  borderColor: "primary.main",
+                }}
+              >
+                간략 소개
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
+                <strong>"뛰어난 한 명의 개발자는 하나의 기업가치를 가진다"</strong>
+                라는 신념을 갖고 있습니다.
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
+                제가 잘하는 일은 문제를 인식하고, 다양한 역할을 수행하며 해결하는
+                것입니다.
+              </Typography>
+              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
+                요구사항을 파악하여 기술적인 해결책을 제시하고 팀원, 협력부서 더 나아가<br />
+                클라이언트와의 원활한 커뮤니케이션 능력을 갖추고 있습니다.
+              </Typography>
+              <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+                그간 쌓아온 노하우를 십분 활용하여 조직의
+                발전에 이바지하고 싶습니다.
+              </Typography>
+            </Paper>
+
+            {/* Skills */}
+            <Paper elevation={2} sx={{ p: 4, mb: 3, bgcolor: "background.paper" }}>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 600,
+                  pb: 2,
+                  borderBottom: "2px solid",
+                  borderColor: "primary.main",
+                }}
+              >
+                Skills
+              </Typography>
+              <Box sx={{ mb: 3 }}>
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    mb: 1,
+                    color: "text.secondary",
+                    fontWeight: 600,
+                  }}
+                >
+                  Core Skills
+                </Typography>
+                <Stack direction="row" flexWrap="wrap" sx={{ gap: 1 }}>
+                  {["Java", "Javascript", "SQL", "AWS", "K3s", "Docker", "Bare Metal", "Git"].map((skill) => (
+                    <Chip
+                      key={skill}
+                      label={skill}
+                      sx={{
+                        bgcolor: "primary.main",
+                        color: "white",
+                        fontWeight: 500,
+                      }}
+                    />
+                  ))}
+                </Stack>
+              </Box>
+              <Box>
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    mb: 1,
+                    color: "text.secondary",
+                    fontWeight: 600,
+                  }}
+                >
+                  Additional Skills
+                </Typography>
+                <Stack direction="row" flexWrap="wrap" sx={{ gap: 1 }}>
+                  {["PHP(Legacy version 5.x)", "Python", "HTML", "CSS", "Web Publishing"].map((skill) => (
+                    <Chip
+                      key={skill}
+                      label={skill}
+                      variant="outlined"
+                      sx={{
+                        borderColor: "divider",
+                        color: "text.primary",
+                        fontWeight: 500,
+                      }}
+                    />
+                  ))}
+                </Stack>
+              </Box>
+            </Paper>
+
+            {/* 병역 사항 */}
+            <Paper elevation={2} sx={{ p: 4, mb: 3, bgcolor: "background.paper" }}>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 600,
+                  pb: 2,
+                  borderBottom: "2px solid",
+                  borderColor: "primary.main",
+                }}
+              >
+                병역 사항
+              </Typography>
+              <Stack direction="row" flexWrap="wrap" sx={{ gap: 2 }}>
+                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" } }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary", display: "block", mb: 0.5 }}
+                  >
+                    병역구분
+                  </Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                    필
+                  </Typography>
+                </Box>
+                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" } }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary", display: "block", mb: 0.5 }}
+                  >
+                    군별
+                  </Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                    육군
+                  </Typography>
+                </Box>
+                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" } }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary", display: "block", mb: 0.5 }}
+                  >
+                    최종계급
+                  </Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                    병장
+                  </Typography>
+                </Box>
+                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" } }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary", display: "block", mb: 0.5 }}
+                  >
+                    복무기간
+                  </Typography>
+                  <Typography variant="body1" sx={{ fontWeight: 500 }}>
+                    2012.12.06<br />~<br />2014.09.05
+                  </Typography>
+                </Box>
+              </Stack>
+            </Paper>
+
+            {/* 학력 */}
+            <Paper elevation={2} sx={{ p: 4, mb: 3, bgcolor: "background.paper" }}>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 600,
+                  pb: 2,
+                  borderBottom: "2px solid",
+                  borderColor: "primary.main",
+                }}
+              >
+                학력
+              </Typography>
+              <Stack spacing={3}>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
                     서울디지털대학교
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    💻 컴퓨터공학전공
+                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                    컴퓨터공학전공 / 학점 3.19 / 졸업
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    공학사 취득
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 3 }}>
-                    2022.03 ~ 2024.02 졸업
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    학점 3.19/4.5
-                  </Typography>
-                </Paper>
-              </Box>
-              {/* <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(33.333% - 16px)" } }}>
-                <Paper
-                  elevation={1}
-                  sx={{
-                    p: 4,
-                    borderRadius: "25px",
-                    textAlign: "center",
-                  }}
-                >
-                  <Typography variant="h6" component="h5" gutterBottom>
-                    평생교육진흥원
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    💵 경영 전공
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    경영전문학사 취득
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 3 }}>
-                    2018.01 ~ 2021.02 졸업
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    학점 3.13/4.5
-                  </Typography>
-                </Paper>
-              </Box> */}
-              <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(33.333% - 16px)" } }}>
-                <Paper
-                  elevation={1}
-                  sx={{
-                    p: 4,
-                    borderRadius: "25px",
-                    textAlign: "center",
-                  }}
-                >
-                  <Typography variant="h6" component="h5" gutterBottom>
+                  {/* 
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                      2022.03 ~ 2024.02 졸업
+                    </Typography> 
+                  */}
+                </Box>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
                     소사고등학교
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    📖 인문 계열
+                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                    인문 계열 / 졸업
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    -
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 3 }}>
-                    2007.03 ~ 2010.02 졸업
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    -
-                  </Typography>
-                </Paper>
-              </Box>
-            </Stack>
-          </Paper>
-        </Container>
-      </section>
-      <section>
-        <Container maxWidth="lg" sx={{ mt: 2 }}>
-          <Box className="honors-body">
-            <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-              <Typography variant="h5" component="h3" fontWeight="bold" sx={{ mb: 3 }}>
-                🏆 수상 경력
+                  {/* 
+                    <Typography variant="body2" sx={{ fontWeight: 500 }}>
+                      2007.03 ~ 2010.02 졸업
+                    </Typography> 
+                  */}
+                </Box>
+              </Stack>
+            </Paper>
+
+            {/* 수상 경력 */}
+            <Paper elevation={2} sx={{ p: 4, mb: 3, bgcolor: "background.paper" }}>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 600,
+                  pb: 2,
+                  borderBottom: "2px solid",
+                  borderColor: "primary.main",
+                }}
+              >
+                수상 경력
               </Typography>
-              <Table>
-                <TableBody>
-                  <TableRow>
-                    <TableCell component="th" scope="row">
-                      수상명
-                    </TableCell>
-                    <TableCell>
-                      <Chip label="애드테크 은상" sx={{ borderRadius: "25px" }} />
-                    </TableCell>
-                    <TableCell component="th" scope="row">
-                      수여기관
-                    </TableCell>
-                    <TableCell>
-                      <Chip label="(사)한국디지털광고협회" sx={{ borderRadius: "25px" }} />
-                    </TableCell>
-                    <TableCell component="th" scope="row">
-                      수상연도
-                    </TableCell>
-                    <TableCell>
-                      <Chip label="2022" sx={{ borderRadius: "25px" }} />
-                    </TableCell>
-                    <TableCell component="th" scope="row">
-                      수여내용
-                    </TableCell>
-                    <TableCell>
-                      <Chip
-                        label="AI기술을 활용한 디지털마케팅플랫폼, 키딕 (KeyDig)"
-                        sx={{ borderRadius: "25px" }}
-                      />
-                    </TableCell>
-                  </TableRow>
-                </TableBody>
-              </Table>
+              <Stack spacing={1.5}>
+                <Box>
+                  <Typography variant="h6" sx={{  mb: 0.5, fontWeight: 600 }}>
+                    애드테크 은상
+                  </Typography>
+                  <Typography variant="caption" sx={{ mb: 0.5, color: "text.secondary" }}>
+                    (사)한국디지털광고협회
+                    <br />
+                    AI기술을 활용한 디지털마케팅플랫폼, KeyDig (2022년도)
+                  </Typography>
+                </Box>
+              </Stack>
+            </Paper>
+
+            {/* 경력 사항 */}
+            <Paper elevation={2} sx={{ p: 4, bgcolor: "background.paper" }}>
+              <Typography
+                variant="h5"
+                component="h2"
+                sx={{
+                  mb: 3,
+                  fontWeight: 600,
+                  pb: 2,
+                  borderBottom: "2px solid",
+                  borderColor: "primary.main",
+                }}
+              >
+                경력 사항
+              </Typography>
+              <Stack spacing={3}>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    쿤텍
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                    SCS 연구개발팀 / 선임 / 2025.01 ~ 현재
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    나이콤
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                    R&D 웹 개발팀 / 대리 / 2024.05 ~ 2024.10 (5개월)
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    엠플랜잇
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                    기업부설연구소 / 선임 / 2022.01 ~ 2024.04 (2년 4개월)
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                    컴퓨존
+                  </Typography>
+                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                    전산팀 / 팀원 / 2017.09 ~ 2021.01 (3년 5개월)
+                  </Typography>
+                </Box>
+              </Stack>
             </Paper>
           </Box>
-        </Container>
-      </section>
-      <section>
-        <Container maxWidth="lg" sx={{ mt: 2 }}>
-          <Box className="work-experience-body">
-            <Paper elevation={0} sx={{ bgcolor: "background.default", p: 4 }}>
-              <Typography variant="h5" component="h3" fontWeight="bold" sx={{ mb: 3 }}>
-                📁 경력 사항
-              </Typography>
-            </Paper>
-          </Box>
-        </Container>
-      </section>
+        </Stack>
+      </Container>
     </main>
   );
 }
