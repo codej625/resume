@@ -1,17 +1,20 @@
-// import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Index from "./components/pages/Index";
+import { RouterProvider } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { router } from "@/routes";
+
+// Material UI 테마 설정
+const theme = createTheme({
+  // 여기서 테마 커스터마이징
+  // ex) palette: { primary: { main: '#1976d2' } }
+});
 
 export default function App() {
-
-  // const baseUrl = import.meta.env.VITE_APP_BASE_URL;
-  
   return (
-    <Index />
-    // <Router basename="/">
-    //   <Routes>
-    //     <Route path="/" element={<Index />} />
-    //     <Route path={baseUrl} element={<Navigate to="/" replace />} />
-    //   </Routes>
-    // </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
+
