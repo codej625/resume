@@ -19,8 +19,8 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    // baseUrl이 필요한 경우 여기서 설정
-    // basename: import.meta.env.VITE_APP_BASE_URL || "/",
+    // GitHub Pages 서브디렉토리 배포를 위한 basename 설정
+    basename: '/resume',
     // React Router v7 호환성을 위한 future flags
     future: {
       v7_startTransition: true,
