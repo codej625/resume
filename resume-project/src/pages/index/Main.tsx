@@ -11,6 +11,7 @@ import {
   Stack,
   Link,
 } from "@mui/material";
+import identificationPicture from "@/assets/img/identification_picture.jpg";
 
 export default function Main() {
   return (
@@ -53,7 +54,7 @@ export default function Main() {
                 <Box component="figure" sx={{ m: 0 }}>
                   <Box
                     component="img"
-                    src="/assets/img/identification_picture.jpg"
+                    src={identificationPicture}
                     alt="identification picture"
                     sx={{ maxWidth: "100%", height: "auto" }}
                   />
