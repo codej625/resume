@@ -210,7 +210,7 @@ export default function Main() {
                   Core Skills
                 </Typography>
                 <Stack direction="row" flexWrap="wrap" sx={{ gap: 1 }}>
-                  {["Java", "Javascript", "SQL", "AWS", "K3s", "Docker", "Bare Metal", "Git"].map((skill) => (
+                  {["Java", "Javascript", "SQL", "AWS", "K3s", "Docker", "Git"].map((skill) => (
                     <Chip
                       key={skill}
                       label={skill}
@@ -235,7 +235,7 @@ export default function Main() {
                   Additional Skills
                 </Typography>
                 <Stack direction="row" flexWrap="wrap" sx={{ gap: 1 }}>
-                  {["PHP(Legacy version 5.x)", "Python", "HTML", "CSS", "Web Publishing"].map((skill) => (
+                  {["PHP 5", "Python", "Web Publishing", "SEO", "Bare Metal"].map((skill) => (
                     <Chip
                       key={skill}
                       label={skill}
@@ -308,7 +308,7 @@ export default function Main() {
                     복무기간
                   </Typography>
                   <Typography variant="body1" sx={{ fontWeight: 500 }}>
-                    2012.12.06<br />~<br />2014.09.05
+                    2012.12.06 ~ 2014.09.05
                   </Typography>
                 </Box>
               </Stack>
@@ -382,7 +382,7 @@ export default function Main() {
                   <Typography variant="caption" sx={{ mb: 0.5, color: "text.secondary" }}>
                     (사)한국디지털광고협회
                     <br />
-                    AI기술을 활용한 디지털마케팅플랫폼, KeyDig (2022년도)
+                    AI기술을 활용한 디지털마케팅플랫폼, KeyDig (2022)
                   </Typography>
                 </Box>
               </Stack>
@@ -417,7 +417,7 @@ export default function Main() {
                     나이콤
                   </Typography>
                   <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    R&D 웹 개발팀 / 대리 / 2024.05 ~ 2024.10 (5개월)
+                    R&D 웹 개발팀 / 대리 / 2024.05 ~ 2024.10
                   </Typography>
                 </Box>
                 <Box>
@@ -425,7 +425,7 @@ export default function Main() {
                     엠플랜잇
                   </Typography>
                   <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    기업부설연구소 / 선임 / 2022.01 ~ 2024.04 (2년 4개월)
+                    기업부설연구소 / 선임 / 2022.01 ~ 2024.04
                   </Typography>
                 </Box>
                 <Box>
@@ -433,7 +433,7 @@ export default function Main() {
                     컴퓨존
                   </Typography>
                   <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    전산팀 / 팀원 / 2017.09 ~ 2021.01 (3년 5개월)
+                    전산팀 / 팀원 / 2017.09 ~ 2021.01
                   </Typography>
                 </Box>
               </Stack>
