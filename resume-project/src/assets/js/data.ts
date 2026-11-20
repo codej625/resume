@@ -1,8 +1,3 @@
-export interface ProjectLink {
-  label: string;
-  url: string;
-}
-
 export interface ProjectTask {
   title: string;
   bullets: string[];
@@ -13,7 +8,6 @@ export interface Project {
   company: string;
   period: string;
   tasks: ProjectTask[];
-  links?: ProjectLink[];
 }
 
 export interface Career {
@@ -26,16 +20,33 @@ export interface Career {
   duties: string[];
 }
 
-export const totalTenure = "8년 1개월";
+export interface Advisory {
+  organization: string;
+  period: string;
+  description: string;
+}
+
+export const advisories: Advisory[] = [
+  {
+    organization: "프로원",
+    period: "2026.06 ~ 2026.06",
+    description: "온라인 전환 중개 플랫폼 운영",
+  },
+  {
+    organization: "한국카본데이터",
+    period: "2026.01 ~ 2026.01",
+    description: "한국형 녹색분류체계 기반 환경개선효과 산정방법론 개발 관련 업무 수행",
+  },
+];
 
 export const careers: Career[] = [
   {
     company: "쿤텍",
     scale: "중소기업",
-    domain: "공급망 보안 (Supply chain security management)",
+    domain: "공급망 보안",
     department: "SCS 연구개발팀 엔진 개발파트",
     position: "선임 연구원",
-    period: "2025.01 ~ 재직 중 (2026.02.10 부터 육아휴직)",
+    period: "2025.01 ~ 재직 중",
     duties: [
       "사이버작전사령부 탐색시제 프로젝트 Tech Lead",
       "사이버작전사령부 탐색시제 프로젝트 보안 취약점 대응",
@@ -61,7 +72,7 @@ export const careers: Career[] = [
   {
     company: "엠플랜잇",
     scale: "스타트업",
-    domain: "SI / SM",
+    domain: "웹 에이전시",
     department: "기업부설연구소",
     position: "선임 연구원",
     period: "2022.01 ~ 2024.04",
@@ -75,12 +86,12 @@ export const careers: Career[] = [
   {
     company: "컴퓨존",
     scale: "중견기업",
-    domain: "이커머스 (E-commerce)",
+    domain: "이커머스",
     department: "전산팀",
     position: "사원",
     period: "2017.09 ~ 2021.01",
     duties: [
-      "자사 E-commerce 유지보수",
+      "자사 이커머스 유지보수",
       "협력업체 기간계 시스템 (외부 WMS) API 연동 및 미들웨어 개발",
       "시스템 점검 및 영향도 분석",
       "시스템 사고 처리 및 모니터링",
@@ -88,10 +99,32 @@ export const careers: Career[] = [
   },
 ];
 
+function careerMonths(period: string) {
+  const match = period.match(/^(\d{4})\.(\d{2}) ~ (.+)$/);
+  if (!match) return 0;
+  const startYear = Number(match[1]);
+  const startMonth = Number(match[2]);
+  const endMatch = match[3].match(/^(\d{4})\.(\d{2})/);
+  const now = new Date();
+  const endYear = endMatch ? Number(endMatch[1]) : now.getFullYear();
+  const endMonth = endMatch ? Number(endMatch[2]) : now.getMonth() + 1;
+  return (endYear - startYear) * 12 + (endMonth - startMonth) + 1;
+}
+
+function formatMonths(months: number) {
+  const years = Math.floor(months / 12);
+  const rest = months % 12;
+  if (years > 0 && rest > 0) return `${years}년 ${rest}개월`;
+  if (years > 0) return `${years}년`;
+  return `${rest}개월`;
+}
+
+export const totalTenure = formatMonths(careers.reduce((sum, career) => sum + careerMonths(career.period), 0));
+
 export const projects: Project[] = [
   {
     title: "MD 업무 자동화 플랫폼 및 브랜드 사이트 개발",
-    company: "RAD",
+    company: "RAD.",
     period: "2026.03 ~ 2026.10",
     tasks: [
       {
@@ -342,7 +375,6 @@ export const projects: Project[] = [
         bullets: [],
       },
     ],
-    links: [{ label: "https://www.kiwoomapmall.com", url: "https://www.kiwoomapmall.com" }],
   },
   {
     title: "Offerwall API Server 개발",
@@ -405,11 +437,6 @@ export const projects: Project[] = [
         bullets: ["AWS CodeCommit, SVN"],
       },
     ],
-    links: [
-      { label: "롯데손해보험", url: "https://www.lotteinsumall.com" },
-      { label: "흥국생명", url: "https://www.heungkukdirect.com" },
-      { label: "한화손해보험", url: "https://www.hwgi.kr" },
-    ],
   },
   {
     title: "자사 홈페이지 리뉴얼 / 어드민 개발",
@@ -433,7 +460,6 @@ export const projects: Project[] = [
         bullets: [],
       },
     ],
-    links: [{ label: "https://www.mplanit.co.kr", url: "https://www.mplanit.co.kr" }],
   },
   {
     title: "키딕 (Keydig) 키워드 분석 솔루션 개발",
@@ -461,7 +487,6 @@ export const projects: Project[] = [
         bullets: [],
       },
     ],
-    links: [{ label: "https://keydig.io", url: "https://keydig.io" }],
   },
   {
     title: "프로원 광고사이트 및 CRM 개발",
@@ -487,7 +512,6 @@ export const projects: Project[] = [
         bullets: [],
       },
     ],
-    links: [{ label: "https://proone-home-doctor.com", url: "https://proone-home-doctor.com" }],
   },
   {
     title: "용인공원 아너스톤 유지보수",
@@ -507,7 +531,6 @@ export const projects: Project[] = [
         bullets: ["외부 CRM 데이터 연동을 통한 고객 정보 관리 자동화"],
       },
     ],
-    links: [{ label: "https://www.yongin-park.com", url: "https://www.yongin-park.com" }],
   },
   {
     title: "자사 이커머스 및 ERP/WMS 운영·유지보수",
@@ -553,6 +576,5 @@ export const projects: Project[] = [
         bullets: [],
       },
     ],
-    links: [{ label: "https://www.compuzone.co.kr", url: "https://www.compuzone.co.kr" }],
   },
 ];

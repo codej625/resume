@@ -1,9 +1,22 @@
-import { Box, Chip, Divider, Link, Paper, Stack, Typography } from "@mui/material";
-import { careers, projects, totalTenure, type Project } from "@/assets/js/data";
+import { Box, Chip, Divider, Paper, Stack, Typography } from "@mui/material";
+import { advisories, careers, projects, totalTenure, type Project } from "@/assets/js/data";
+import { fontWeight as weight } from "@/assets/css/font";
+
+const companyChipSx = {
+  bgcolor: "grey.200",
+  color: "text.primary",
+  fontWeight: weight.medium,
+} as const;
+
+function formatPeriod(period: string) {
+  const [start, end] = period.split(" ~ ");
+  if (start && end === start) return start;
+  return period;
+}
 
 const sectionTitleSx = {
   mb: 3,
-  fontWeight: 600,
+  fontWeight: weight.bold,
   pb: 2,
   borderBottom: "2px solid",
   borderColor: "primary.main",
@@ -12,96 +25,104 @@ const sectionTitleSx = {
 function ProjectBlock({ project }: { project: Project }) {
   return (
     <Box>
-      <Typography variant="h6" sx={{ fontWeight: 600, lineHeight: 1.4 }}>
-        {project.title}
-      </Typography>
-      <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" sx={{ mt: 0.75, mb: 1.5 }}>
-        <Chip label={project.company} size="small" sx={{ bgcolor: "primary.main", color: "white" }} />
-        <Typography variant="caption" sx={{ color: "text.secondary" }}>
-          {project.period}
+      <Stack spacing={2} sx={{ mb: 1.5 }}>
+        <Box>
+          <Box sx={{ mb: "8px" }}>
+            <Chip label={project.company} sx={companyChipSx} />
+          </Box>
+        </Box>
+        <Typography variant="h6" sx={{ fontWeight: weight.medium, lineHeight: 1.4 }}>
+          {project.title}
         </Typography>
       </Stack>
-      <Stack spacing={1.25} component="ol" sx={{ m: 0, pl: 2.5 }}>
-        {project.tasks.map((task) => (
-          <Box component="li" key={task.title} sx={{ pl: 0.5 }}>
-            <Typography variant="body2" sx={{ fontWeight: 600 }}>
-              {task.title}
+      <Stack spacing={1.5} sx={{ pl: 2 }}>
+        {project.tasks.map((task, index) => (
+          <Box key={task.title}>
+            <Typography variant="body1" sx={{ fontWeight: weight.medium }}>
+              {index + 1}. {task.title}
             </Typography>
             {task.bullets.length > 0 && (
-              <Box component="ul" sx={{ m: 0, mt: 0.5, pl: 2.25 }}>
-                {task.bullets.map((bullet) => (
-                  <Typography
-                    component="li"
-                    variant="body2"
-                    key={bullet}
-                    sx={{ color: "text.secondary", lineHeight: 1.7 }}
-                  >
-                    {bullet}
+              <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2 }}>
+                {task.bullets.map((bullet, bulletIndex) => (
+                  <Typography key={bullet} variant="body1" sx={{ color: "text.secondary", lineHeight: 1.7 }}>
+                    {bulletIndex + 1}) {bullet}
                   </Typography>
                 ))}
-              </Box>
+              </Stack>
             )}
           </Box>
         ))}
       </Stack>
-      {project.links && project.links.length > 0 && (
-        <Stack direction="row" flexWrap="wrap" sx={{ gap: 1.5, mt: 1.5 }}>
-          {project.links.map((link) => (
-            <Link
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              variant="body2"
-              sx={{ wordBreak: "break-all" }}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </Stack>
-      )}
     </Box>
+  );
+}
+
+export function Advisory() {
+  return (
+    <Paper id="advisory" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+      <Typography variant="h5" component="h2" sx={sectionTitleSx}>
+        자문
+      </Typography>
+      <Stack spacing={1.5}>
+        {advisories.map((item) => (
+          <Box key={item.organization}>
+            <Typography variant="h6" sx={{ mb: 0.5, fontWeight: weight.medium }}>
+              {item.organization}
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 0.5, color: "text.secondary" }}>
+              {item.description} ({formatPeriod(item.period)})
+            </Typography>
+          </Box>
+        ))}
+      </Stack>
+    </Paper>
   );
 }
 
 export default function Career() {
   return (
-    <>
-      <Paper id="workExperience" elevation={2} sx={{ p: 4, mb: 3, bgcolor: "background.paper" }}>
+      <Paper id="workExperience" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
         <Typography variant="h5" component="h2" sx={sectionTitleSx}>
           경력 사항
         </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary", mb: 3 }}>
+        <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontWeight: weight.regular }}>
           총 재직기간 {totalTenure}
         </Typography>
         <Stack spacing={3} divider={<Divider flexItem />}>
           {careers.map((career) => (
             <Box key={career.company}>
-              <Stack direction="row" spacing={1} alignItems="center" flexWrap="wrap" useFlexGap>
-                <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  {career.company}
-                </Typography>
-                <Chip label={career.scale} size="small" variant="outlined" />
-              </Stack>
-              <Typography variant="body2" sx={{ mt: 0.5 }}>
-                {career.domain}
+              <Typography
+                variant="h6"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  columnGap: "0.3rem",
+                  fontWeight: weight.medium,
+                }}
+              >
+                {career.company} ({career.period})
               </Typography>
-              <Typography variant="caption" sx={{ color: "text.secondary", display: "block", mt: 0.5 }}>
-                {career.department} / {career.position} / {career.period}
+              <Typography variant="body1" sx={{ color: "text.secondary", display: "block", mt: 0.5, fontWeight: weight.regular }}>
+                {career.domain} · {career.department} {career.position}
               </Typography>
-              <Box component="ul" sx={{ mt: 1.5, mb: 0, pl: 2.5 }}>
+              <Stack spacing={0.5} sx={{ mt: 1.5 }}>
                 {career.duties.map((duty) => (
-                  <Typography component="li" variant="body2" key={duty} sx={{ lineHeight: 1.7 }}>
-                    {duty}
+                  <Typography variant="body1" key={duty} sx={{ lineHeight: 1.7, fontWeight: weight.regular }}>
+                    - {duty}
                   </Typography>
                 ))}
-              </Box>
+              </Stack>
             </Box>
           ))}
         </Stack>
       </Paper>
+  );
+}
 
-      <Paper id="projects" elevation={2} sx={{ p: 4, bgcolor: "background.paper" }}>
+export function Projects() {
+  return (
+      <Paper id="projects" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: 0, bgcolor: "background.paper" }}>
         <Typography variant="h5" component="h2" sx={sectionTitleSx}>
           프로젝트
         </Typography>
@@ -111,6 +132,5 @@ export default function Career() {
           ))}
         </Stack>
       </Paper>
-    </>
   );
 }
