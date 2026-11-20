@@ -15,8 +15,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Path aliases */
-    "baseUrl": ".",
+    /* Path aliases. Resolved relative to this config file. */
     "paths": {
       "@/*": ["./src/*"]
     },

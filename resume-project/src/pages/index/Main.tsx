@@ -2,12 +2,12 @@ import {
   Box,
   Container,
   Typography,
-  Chip,
   Stack,
   Link,
   Paper,
 } from "@mui/material";
 import identificationPicture from "@/assets/img/identification_picture.jpg";
+import Career from "@/pages/index/Career";
 
 export default function Main() {
   return (
@@ -60,7 +60,7 @@ export default function Main() {
                     mb: 3,
                   }}
                 >
-                  Full Stack Developer
+                  Full stack Builder
                 </Typography>
               </Box>
 
@@ -166,20 +166,11 @@ export default function Main() {
                 간략 소개
               </Typography>
               <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-                <strong>"뛰어난 한 명의 개발자는 하나의 기업가치를 가진다"</strong>
-                라는 신념을 갖고 있습니다.
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-                제가 잘하는 일은 문제를 인식하고, 다양한 역할을 수행하며 해결하는
-                것입니다.
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 2, lineHeight: 1.8 }}>
-                요구사항을 파악하여 기술적인 해결책을 제시하고 팀원, 협력부서 더 나아가<br />
-                클라이언트와의 원활한 커뮤니케이션 능력을 갖추고 있습니다.
+                기획부터 퍼블리싱, 개발, 배포까지 전 과정을 아우르는 8년차 풀스택 빌더 이진우입니다.
               </Typography>
               <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-                그간 쌓아온 노하우를 십분 활용하여 조직의
-                발전에 이바지하고 싶습니다.
+                이커머스, SI/SM, CRM, ERP, 공급망 보안, 키오스크 등 다양한 도메인 경험을 바탕으로 복잡한
+                비즈니스 요구사항을 정확히 조율하고 문제를 해결합니다.
               </Typography>
             </Paper>
 
@@ -198,57 +189,75 @@ export default function Main() {
               >
                 Skills
               </Typography>
-              <Box sx={{ mb: 3 }}>
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    mb: 1,
-                    color: "text.secondary",
-                    fontWeight: 600,
-                  }}
-                >
-                  Core Skills
-                </Typography>
-                <Stack direction="row" flexWrap="wrap" sx={{ gap: 1 }}>
-                  {["Java", "Javascript", "SQL", "AWS", "K3s", "Docker", "Git"].map((skill) => (
-                    <Chip
-                      key={skill}
-                      label={skill}
-                      sx={{
-                        bgcolor: "primary.main",
-                        color: "white",
-                        fontWeight: 500,
-                      }}
-                    />
-                  ))}
-                </Stack>
-              </Box>
-              <Box>
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    mb: 1,
-                    color: "text.secondary",
-                    fontWeight: 600,
-                  }}
-                >
-                  Additional Skills
-                </Typography>
-                <Stack direction="row" flexWrap="wrap" sx={{ gap: 1 }}>
-                  {["PHP 5", "Python", "Web Publishing", "SEO", "Bare Metal"].map((skill) => (
-                    <Chip
-                      key={skill}
-                      label={skill}
-                      variant="outlined"
-                      sx={{
-                        borderColor: "divider",
-                        color: "text.primary",
-                        fontWeight: 500,
-                      }}
-                    />
-                  ))}
-                </Stack>
-              </Box>
+              <Stack spacing={2.5}>
+                {[
+                  {
+                    title: "Language",
+                    lines: [
+                      "Java / JavaScript / TypeScript",
+                      "Python / PHP (Legacy version 5.x)",
+                    ],
+                  },
+                  {
+                    title: "Framework / Library",
+                    lines: [
+                      "Back-end",
+                      "- Spring Boot / NestJS / FastAPI",
+                      "Front-End",
+                      "- React / Next.js / jQuery",
+                    ],
+                  },
+                  {
+                    title: "Tool",
+                    lines: [
+                      "VSC / Cursor / IntelliJ / Postman / PuTTY",
+                      "FileZilla / Git / Apache JMeter / DBeaver / iTerm",
+                    ],
+                  },
+                  {
+                    title: "Web Publishing",
+                    lines: [
+                      "HTML5 / CSS3 / JSP (Java Server Pages)",
+                      "Thymeleaf (Java Template Engine)",
+                      "Smarty (PHP Template Engine)",
+                    ],
+                  },
+                  {
+                    title: "OS",
+                    lines: ["MacOS / Linux (Ubuntu / Windows)"],
+                  },
+                  {
+                    title: "Database",
+                    lines: ["Oracle / MySQL / PostgreSQL / AWS RDB"],
+                  },
+                  {
+                    title: "Cloud, DevOps",
+                    lines: [
+                      "AWS / Cloudflare / Nginx / Apache Tomcat",
+                      "Hyper-V (VM) / K8s (K3s) / Docker / Jenkins",
+                    ],
+                  },
+                  {
+                    title: "ETC",
+                    lines: ["SEO / GEO / i18n / Harness Engineering"],
+                  },
+                ].map((group) => (
+                  <Box key={group.title}>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ mb: 0.5, color: "text.primary", fontWeight: 700 }}
+                    >
+                      {group.title}
+                    </Typography>
+                    {group.lines.map((line) => (
+                      <Typography key={line} variant="body2" sx={{ lineHeight: 1.7 }}>
+                        {line}
+                      </Typography>
+                    ))}
+                  </Box>
+                ))}
+              </Stack>
             </Paper>
 
             {/* 병역 사항 */}
@@ -388,56 +397,7 @@ export default function Main() {
               </Stack>
             </Paper>
 
-            {/* 경력 사항 */}
-            <Paper elevation={2} sx={{ p: 4, bgcolor: "background.paper" }}>
-              <Typography
-                variant="h5"
-                component="h2"
-                sx={{
-                  mb: 3,
-                  fontWeight: 600,
-                  pb: 2,
-                  borderBottom: "2px solid",
-                  borderColor: "primary.main",
-                }}
-              >
-                경력 사항
-              </Typography>
-              <Stack spacing={3}>
-                <Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    쿤텍
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    SCS 연구개발팀 / 선임 / 2025.01 ~ 현재
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    나이콤
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    R&D 웹 개발팀 / 대리 / 2024.05 ~ 2024.10
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    엠플랜잇
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    기업부설연구소 / 선임 / 2022.01 ~ 2024.04
-                  </Typography>
-                </Box>
-                <Box>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                    컴퓨존
-                  </Typography>
-                  <Typography variant="caption" sx={{ color: "text.secondary" }}>
-                    전산팀 / 팀원 / 2017.09 ~ 2021.01
-                  </Typography>
-                </Box>
-              </Stack>
-            </Paper>
+            <Career />
           </Box>
         </Stack>
       </Container>
