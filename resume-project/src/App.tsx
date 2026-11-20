@@ -2,6 +2,7 @@ import { RouterProvider } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { router } from "@/routes";
+import { fontSize, fontWeight } from "@/assets/css/font";
 
 // Material UI 테마 설정
 const theme = createTheme({
@@ -37,30 +38,42 @@ const theme = createTheme({
       "Arial",
       "sans-serif",
     ].join(","),
-    h3: {
-      fontWeight: 700,
-      letterSpacing: "-0.02em",
-      lineHeight: 1.2,
-    },
     h4: {
-      fontWeight: 600,
-      letterSpacing: "-0.01em",
+      fontSize: fontSize.display,
+      fontWeight: fontWeight.bold,
+      letterSpacing: "-0.02em",
       lineHeight: 1.3,
     },
     h5: {
-      fontWeight: 600,
+      fontSize: fontSize.heading,
+      fontWeight: fontWeight.bold,
       letterSpacing: "-0.01em",
       lineHeight: 1.4,
     },
     h6: {
-      fontWeight: 600,
+      fontSize: fontSize.subheading,
+      fontWeight: fontWeight.medium,
       letterSpacing: "0em",
+      lineHeight: 1.4,
     },
     body1: {
+      fontSize: fontSize.body,
+      fontWeight: fontWeight.regular,
       lineHeight: 1.7,
     },
     body2: {
-      lineHeight: 1.6,
+      fontSize: fontSize.body,
+      fontWeight: fontWeight.regular,
+      lineHeight: 1.7,
+    },
+    caption: {
+      fontSize: fontSize.body,
+      fontWeight: fontWeight.medium,
+      lineHeight: 1.7,
+    },
+    button: {
+      fontSize: fontSize.body,
+      fontWeight: fontWeight.medium,
     },
   },
   shape: {
@@ -71,6 +84,19 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundImage: "none",
+        },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: {
+          fontSize: fontSize.body,
+          fontWeight: fontWeight.medium,
+          height: "auto",
+        },
+        label: {
+          fontSize: fontSize.body,
+          padding: "8px 16px",
         },
       },
     },

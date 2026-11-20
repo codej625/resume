@@ -11,7 +11,7 @@ export default function Footer() {
             alignItems="center"
           >
             <Typography 
-              variant="body2" 
+              variant="body1" 
               sx={{ color: "white", opacity: 0.8, textAlign: "center" }}
             >
               Copyright© {new Date().getFullYear()} All rights reserved.
