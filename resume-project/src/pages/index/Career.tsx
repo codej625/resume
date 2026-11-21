@@ -43,11 +43,39 @@ function ProjectBlock({ project }: { project: Project }) {
             </Typography>
             {task.bullets.length > 0 && (
               <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2 }}>
-                {task.bullets.map((bullet, bulletIndex) => (
-                  <Typography key={bullet} variant="body1" sx={{ color: "text.secondary", lineHeight: 1.7 }}>
-                    {bulletIndex + 1}) {bullet}
-                  </Typography>
-                ))}
+                {task.bullets.map((bullet, bulletIndex) => {
+                  const text = typeof bullet === "string" ? bullet : bullet.text;
+                  const children = typeof bullet === "string" ? [] : (bullet.children ?? []);
+                  return (
+                    <Box key={text}>
+                      <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.7 }}>
+                        {bulletIndex + 1}) {text}
+                      </Typography>
+                      {children.length > 0 && (
+                        <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2 }}>
+                          {children.map((child) => (
+                            <Box key={child} sx={{ display: "flex", columnGap: "0.35rem" }}>
+                              <Typography
+                                component="span"
+                                variant="body1"
+                                sx={{ color: "text.secondary", lineHeight: 1.7, flex: "0 0 auto" }}
+                              >
+                                -
+                              </Typography>
+                              <Typography
+                                component="span"
+                                variant="body1"
+                                sx={{ color: "text.secondary", lineHeight: 1.7, flex: "1 1 auto", minWidth: 0 }}
+                              >
+                                {child}
+                              </Typography>
+                            </Box>
+                          ))}
+                        </Stack>
+                      )}
+                    </Box>
+                  );
+                })}
               </Stack>
             )}
           </Box>
