@@ -31,7 +31,7 @@ function ProjectBlock({ project }: { project: Project }) {
             <Chip label={project.company} sx={companyChipSx} />
           </Box>
         </Box>
-        <Typography variant="h6" sx={{ fontWeight: weight.medium, lineHeight: 1.4 }}>
+        <Typography variant="h6" sx={{ fontWeight: weight.medium, lineHeight: 1.4, whiteSpace: "pre-line" }}>
           {project.title}
         </Typography>
       </Stack>
