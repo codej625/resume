@@ -366,10 +366,6 @@ export const projects: Project[] = [
         ],
       },
       {
-        title: "PC/모바일 웹 퍼블리싱 작업",
-        bullets: ["디자인팀과 협업하여 UI / UX 개선"],
-      },
-      {
         title: "보안 감사 대응",
         bullets: [],
       },
@@ -380,6 +376,10 @@ export const projects: Project[] = [
       {
         title: "형상 관리 (AWS CodeCommit)",
         bullets: [],
+      },
+      {
+        title: "PC/모바일 웹 퍼블리싱 작업",
+        bullets: ["디자인팀과 협업하여 UI / UX 개선"],
       },
     ],
   },
@@ -436,12 +436,12 @@ export const projects: Project[] = [
         bullets: ["네이버 서치어드바이저 기준 모든 조건 통과"],
       },
       {
-        title: "PC/모바일 웹 퍼블리싱 작업",
-        bullets: [],
-      },
-      {
         title: "형상 관리",
         bullets: ["AWS CodeCommit, SVN"],
+      },
+      {
+        title: "PC/모바일 웹 퍼블리싱 작업",
+        bullets: [],
       },
     ],
   },
@@ -450,10 +450,6 @@ export const projects: Project[] = [
     company: "엠플랜잇",
     period: "2022.01 ~ 2024.04",
     tasks: [
-      {
-        title: "PC/모바일 웹 퍼블리싱 작업",
-        bullets: [],
-      },
       {
         title: "클라이언트별 매출 / 실적 통계 기능 개발 (어드민)",
         bullets: [],
@@ -464,6 +460,10 @@ export const projects: Project[] = [
       },
       {
         title: "형상 관리 (AWS CodeCommit)",
+        bullets: [],
+      },
+      {
+        title: "PC/모바일 웹 퍼블리싱 작업",
         bullets: [],
       },
     ],
@@ -478,10 +478,6 @@ export const projects: Project[] = [
         bullets: [],
       },
       {
-        title: "PC/모바일 웹 퍼블리싱 작업",
-        bullets: [],
-      },
-      {
         title: "서버리스 시스템 구축 (AWS Lambda 사용)",
         bullets: [],
       },
@@ -491,6 +487,10 @@ export const projects: Project[] = [
       },
       {
         title: "형상 관리 (AWS CodeCommit)",
+        bullets: [],
+      },
+      {
+        title: "PC/모바일 웹 퍼블리싱 작업",
         bullets: [],
       },
     ],
@@ -526,18 +526,6 @@ export const projects: Project[] = [
     period: "2023.01 ~ 2023.06",
     tasks: [
       {
-        title: "PC/모바일 웹 퍼블리싱 작업",
-        bullets: [
-          {
-            text: "네이버 앱, 크롬, 사파리, 삼성 인터넷 대상 크로스 브라우징 테스트",
-            children: [
-              "공원 소개, 시설 안내 화면의 레이아웃과 글자 깨짐을 확인",
-              "상담 신청 버튼과 입력 영역이 브라우저마다 같은지 확인하고 어긋난 부분을 수정",
-            ],
-          },
-        ],
-      },
-      {
         title: "윈도우 서버 관리",
         bullets: [
           {
@@ -554,6 +542,18 @@ export const projects: Project[] = [
             children: [
               "외부 CRM 업체 API를 연동해 상담 신청 정보를 전달",
               "연동에 실패한 건은 로그로 남기고 다시 전송해 상담 누락을 줄임",
+            ],
+          },
+        ],
+      },
+      {
+        title: "PC/모바일 웹 퍼블리싱 작업",
+        bullets: [
+          {
+            text: "네이버 앱, 크롬, 사파리, 삼성 인터넷 대상 크로스 브라우징 테스트",
+            children: [
+              "공원 소개, 시설 안내 화면의 레이아웃과 글자 깨짐을 확인",
+              "상담 신청 버튼과 입력 영역이 브라우저마다 같은지 확인하고 어긋난 부분을 수정",
             ],
           },
         ],
