@@ -25,7 +25,17 @@ const sectionTitleSx = {
 function ProjectBlock({ project }: { project: Project }) {
   return (
     <Box>
-      <Stack spacing={2} sx={{ mb: 1.5 }}>
+      <Stack
+        spacing={2}
+        sx={{
+          mb: 1.5,
+          "@media print": {
+            display: "block",
+            breakInside: "avoid",
+            breakAfter: "avoid",
+          },
+        }}
+      >
         <Box>
           <Box sx={{ mb: "8px" }}>
             <Chip label={project.company} sx={companyChipSx} />
@@ -35,14 +45,17 @@ function ProjectBlock({ project }: { project: Project }) {
           {project.title}
         </Typography>
       </Stack>
-      <Stack spacing={1.5} sx={{ pl: 2 }}>
+      <Stack spacing={1.5} sx={{ pl: 2, "@media print": { display: "block" } }}>
         {project.tasks.map((task, index) => (
           <Box key={task.title}>
-            <Typography variant="body1" sx={{ fontWeight: weight.medium }}>
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: weight.medium, "@media print": { breakAfter: "avoid" } }}
+            >
               {index + 1}. {task.title}
             </Typography>
             {task.bullets.length > 0 && (
-              <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2 }}>
+              <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2, "@media print": { display: "block" } }}>
                 {task.bullets.map((bullet, bulletIndex) => {
                   const text = typeof bullet === "string" ? bullet : bullet.text;
                   const children = typeof bullet === "string" ? [] : (bullet.children ?? []);
@@ -52,7 +65,7 @@ function ProjectBlock({ project }: { project: Project }) {
                         {bulletIndex + 1}) {text}
                       </Typography>
                       {children.length > 0 && (
-                        <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2 }}>
+                        <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2, "@media print": { display: "block" } }}>
                           {children.map((child) => (
                             <Box key={child} sx={{ display: "flex", columnGap: "0.35rem" }}>
                               <Typography
@@ -87,7 +100,17 @@ function ProjectBlock({ project }: { project: Project }) {
 
 export function Advisory() {
   return (
-    <Paper id="advisory" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+    <Paper
+      id="advisory"
+      elevation={2}
+      sx={{
+        p: 4,
+        mt: { xs: 0 },
+        mb: { xs: 2, md: 4 },
+        bgcolor: "background.paper",
+        "@media print": { breakInside: "avoid" },
+      }}
+    >
       <Typography variant="h5" component="h2" sx={sectionTitleSx}>
         자문
       </Typography>
@@ -116,7 +139,7 @@ export default function Career() {
         <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontWeight: weight.regular }}>
           총 재직기간 {totalTenure}
         </Typography>
-        <Stack spacing={3} divider={<Divider flexItem />}>
+        <Stack spacing={3} divider={<Divider flexItem />} sx={{ "@media print": { display: "block" } }}>
           {careers.map((career) => (
             <Box key={career.company}>
               <Typography
@@ -154,7 +177,7 @@ export function Projects() {
         <Typography variant="h5" component="h2" sx={sectionTitleSx}>
           프로젝트
         </Typography>
-        <Stack spacing={4} divider={<Divider flexItem />}>
+        <Stack spacing={4} divider={<Divider flexItem />} sx={{ "@media print": { display: "block" } }}>
           {projects.map((project) => (
             <ProjectBlock key={`${project.company}-${project.title}`} project={project} />
           ))}

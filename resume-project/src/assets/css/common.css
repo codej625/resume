@@ -374,3 +374,43 @@ section:nth-child(5) > .container > div > div {
     font-size: 0.7rem;
   }
 }
+
+@page {
+  size: A4 portrait;
+  margin: 12mm;
+}
+
+@media print {
+  html,
+  body {
+    background-color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  header {
+    display: none !important;
+  }
+
+  main .MuiPaper-root {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb;
+    padding: 24px !important;
+    margin-bottom: 20px !important;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  main #projects.MuiPaper-root {
+    margin-bottom: 0 !important;
+  }
+
+  main .MuiDivider-root {
+    align-self: auto !important;
+    height: auto !important;
+  }
+
+  main h2 {
+    break-after: avoid;
+  }
+}

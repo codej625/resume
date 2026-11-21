@@ -13,10 +13,39 @@ import { fontWeight as weight } from "@/assets/css/font";
 export default function Main() {
   return (
     <main>
-      <Container maxWidth="lg" sx={{ p: { xs: 2, md: 4 } }}>
-        <Stack direction={{ xs: "column", md: "row" }} spacing={{ xs: 0, md: 4 }}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          p: { xs: 2, md: 4 },
+          "@media print": {
+            maxWidth: "100%",
+            p: 0,
+          },
+        }}
+      >
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          spacing={{ xs: 0, md: 4 }}
+          sx={{
+            "@media print": {
+              display: "block",
+              "& > :not(style) ~ :not(style)": {
+                ml: 0,
+                mt: 0,
+              },
+            },
+          }}
+        >
           {/* 왼쪽 컬럼 - 인적사항 & 사진 */}
-          <Box sx={{ width: { xs: "100%", md: "33.333%" }, flexShrink: 0 }}>
+          <Box
+            sx={{
+              width: { xs: "100%", md: "33.333%" },
+              flexShrink: 0,
+              "@media print": {
+                width: "100%",
+              },
+            }}
+          >
             <Paper
               elevation={2}
               sx={{
@@ -26,6 +55,16 @@ export default function Main() {
                 bgcolor: "background.paper",
                 position: "sticky",
                 top: 32,
+                "@media print": {
+                  position: "static",
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: 3.5,
+                  p: 3,
+                  mb: 2.5,
+                  breakInside: "avoid",
+                },
               }}
             >
               <Box
@@ -40,123 +79,175 @@ export default function Main() {
                   mb: 3,
                   display: "block",
                   mx: "auto",
+                  "@media print": {
+                    width: "128px",
+                    maxWidth: "128px",
+                    mb: 0,
+                    mx: 0,
+                    flexShrink: 0,
+                  },
                 }}
               />
-              <Box sx={{ mb: 3 }}>
-                <Typography
-                  variant="h4"
-                  component="h1"
+              <Box sx={{ "@media print": { flex: 1, minWidth: 0 } }}>
+                <Box
                   sx={{
-                    mb: 1,
-                    fontWeight: weight.bold,
-                    textAlign: "center",
-                  }}
-                >
-                  이 진 우
-                </Typography>
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "text.secondary",
-                    textAlign: "center",
                     mb: 3,
-                    fontWeight: weight.medium,
+                    "@media print": {
+                      mb: 2,
+                      pb: 1.5,
+                      borderBottom: "1px solid",
+                      borderColor: "divider",
+                      display: "flex",
+                      alignItems: "baseline",
+                      gap: 1.5,
+                    },
                   }}
                 >
-                  Full Stack Builder
-                </Typography>
-              </Box>
+                  <Typography
+                    variant="h4"
+                    component="h1"
+                    sx={{
+                      mb: 1,
+                      fontWeight: weight.bold,
+                      textAlign: "center",
+                      "@media print": {
+                        mb: 0,
+                        textAlign: "left",
+                      },
+                    }}
+                  >
+                    이 진 우
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: "text.secondary",
+                      textAlign: "center",
+                      mb: 3,
+                      fontWeight: weight.medium,
+                      "@media print": {
+                        mb: 0,
+                        textAlign: "left",
+                      },
+                    }}
+                  >
+                    Full Stack Builder
+                  </Typography>
+                </Box>
 
-              <Stack spacing={2}>
-                <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "text.secondary",
-                      display: "block",
-                      mb: 0.5,
-                      fontWeight: weight.medium,
-                    }}
-                  >
-                    연락처
-                  </Typography>
-                  <Link
-                    href="tel:01022695901"
-                    variant="body1"
-                    sx={{
-                      color: "text.primary",
-                      fontWeight: weight.regular,
-                      textDecoration: "none",
-                      "&:hover": { textDecoration: "underline" },
-                    }}
-                  >
-                    010-2269-5901
-                  </Link>
-                </Box>
-                <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "text.secondary",
-                      display: "block",
-                      mb: 0.5,
-                      fontWeight: weight.medium,
-                    }}
-                  >
-                    이메일
-                  </Typography>
-                  <Typography variant="body1">dkwksla@naver.com</Typography>
-                </Box>
-                <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "text.secondary",
-                      display: "block",
-                      mb: 0.5,
-                      fontWeight: weight.medium,
-                    }}
-                  >
-                    주소
-                  </Typography>
-                  <Typography variant="body1">경기도 군포시 금정동</Typography>
-                </Box>
-                <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "text.secondary",
-                      display: "block",
-                      mb: 0.5,
-                      fontWeight: weight.medium,
-                    }}
-                  >
-                    생년월일
-                  </Typography>
-                  <Typography variant="body1">1991.06.25</Typography>
-                </Box>
-                <Box>
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "text.secondary",
-                      display: "block",
-                      mb: 0.5,
-                      fontWeight: weight.medium,
-                    }}
-                  >
-                    GitHub
-                  </Typography>
-                  <Typography variant="body1">https://github.com/codej625</Typography>
-                </Box>
-              </Stack>
+                <Stack
+                  spacing={2}
+                  sx={{
+                    "@media print": {
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
+                      columnGap: 2,
+                      rowGap: 1.5,
+                      "& > :not(style) ~ :not(style)": {
+                        mt: 0,
+                      },
+                    },
+                  }}
+                >
+                  <Box>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "text.secondary",
+                        display: "block",
+                        mb: 0.5,
+                        fontWeight: weight.medium,
+                      }}
+                    >
+                      연락처
+                    </Typography>
+                    <Link
+                      href="tel:01022695901"
+                      variant="body1"
+                      sx={{
+                        color: "text.primary",
+                        fontWeight: weight.regular,
+                        textDecoration: "none",
+                        "&:hover": { textDecoration: "underline" },
+                      }}
+                    >
+                      010-2269-5901
+                    </Link>
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "text.secondary",
+                        display: "block",
+                        mb: 0.5,
+                        fontWeight: weight.medium,
+                      }}
+                    >
+                      이메일
+                    </Typography>
+                    <Typography variant="body1">dkwksla@naver.com</Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "text.secondary",
+                        display: "block",
+                        mb: 0.5,
+                        fontWeight: weight.medium,
+                      }}
+                    >
+                      주소
+                    </Typography>
+                    <Typography variant="body1">경기도 군포시 금정동</Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "text.secondary",
+                        display: "block",
+                        mb: 0.5,
+                        fontWeight: weight.medium,
+                      }}
+                    >
+                      생년월일
+                    </Typography>
+                    <Typography variant="body1">1991.06.25</Typography>
+                  </Box>
+                  <Box sx={{ "@media print": { gridColumn: "span 2" } }}>
+                    <Typography
+                      variant="body1"
+                      sx={{
+                        color: "text.secondary",
+                        display: "block",
+                        mb: 0.5,
+                        fontWeight: weight.medium,
+                      }}
+                    >
+                      GitHub
+                    </Typography>
+                    <Typography variant="body1">https://github.com/codej625</Typography>
+                  </Box>
+                </Stack>
+              </Box>
             </Paper>
           </Box>
 
           {/* 오른쪽 컬럼 - 본문 내용 */}
           <Box sx={{ flex: 1, minWidth: 0 }}>
             {/* 간략 소개 */}
-            <Paper elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 4,
+                mt: { xs: 0 },
+                mb: { xs: 2, md: 4 },
+                bgcolor: "background.paper",
+                "@media print": { breakInside: "avoid" },
+              }}
+            >
               <Typography
                 variant="h5"
                 component="h2"
@@ -180,7 +271,16 @@ export default function Main() {
             </Paper>
 
             {/* 학력 */}
-            <Paper elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 4,
+                mt: { xs: 0 },
+                mb: { xs: 2, md: 4 },
+                bgcolor: "background.paper",
+                "@media print": { breakInside: "avoid" },
+              }}
+            >
               <Typography
                 variant="h5"
                 component="h2"
@@ -225,7 +325,16 @@ export default function Main() {
             </Paper>
 
             {/* 병역 사항 */}
-            <Paper elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 4,
+                mt: { xs: 0 },
+                mb: { xs: 2, md: 4 },
+                bgcolor: "background.paper",
+                "@media print": { breakInside: "avoid" },
+              }}
+            >
               <Typography
                 variant="h5"
                 component="h2"
@@ -240,7 +349,12 @@ export default function Main() {
                 병역 사항
               </Typography>
               <Stack direction="row" flexWrap="wrap" sx={{ gap: 2 }}>
-                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" } }}>
+                <Box
+                  sx={{
+                    flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" },
+                    "@media print": { flex: "1 1 calc(25% - 12px)" },
+                  }}
+                >
                   <Typography
                     variant="body1"
                     sx={{ color: "text.secondary", display: "block", mb: 0.5, fontWeight: weight.medium }}
@@ -249,7 +363,12 @@ export default function Main() {
                   </Typography>
                   <Typography variant="body1">필</Typography>
                 </Box>
-                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" } }}>
+                <Box
+                  sx={{
+                    flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" },
+                    "@media print": { flex: "1 1 calc(25% - 12px)" },
+                  }}
+                >
                   <Typography
                     variant="body1"
                     sx={{ color: "text.secondary", display: "block", mb: 0.5, fontWeight: weight.medium }}
@@ -258,7 +377,13 @@ export default function Main() {
                   </Typography>
                   <Typography variant="body1">병장</Typography>
                 </Box>
-                <Box sx={{ flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 auto" }, minWidth: "max-content" }}>
+                <Box
+                  sx={{
+                    flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 auto" },
+                    minWidth: "max-content",
+                    "@media print": { flex: "1 1 auto" },
+                  }}
+                >
                   <Typography
                     variant="body1"
                     sx={{ color: "text.secondary", display: "block", mb: 0.5, fontWeight: weight.medium }}
@@ -273,7 +398,16 @@ export default function Main() {
             </Paper>
 
             {/* 수상 경력 */}
-            <Paper elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 4,
+                mt: { xs: 0 },
+                mb: { xs: 2, md: 4 },
+                bgcolor: "background.paper",
+                "@media print": { breakInside: "avoid" },
+              }}
+            >
               <Typography
                 variant="h5"
                 component="h2"
@@ -320,7 +454,7 @@ export default function Main() {
               >
                 보유 기술
               </Typography>
-              <Stack spacing={2.5}>
+              <Stack spacing={2.5} sx={{ "@media print": { display: "block" } }}>
                 {[
                   {
                     title: "Language",
@@ -373,7 +507,7 @@ export default function Main() {
                     lines: ["SEO / GEO / i18n / Harness Engineering"],
                   },
                 ].map((group) => (
-                  <Box key={group.title}>
+                  <Box key={group.title} sx={{ "@media print": { breakInside: "avoid" } }}>
                     <Typography
                       variant="h6"
                       component="h3"
