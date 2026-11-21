@@ -1,11 +1,80 @@
+import { useRef } from "react";
+import { Box } from "@mui/material";
 import Header from "@/pages/index/Header";
 // import Footer from "@/pages/index/Footer";
 import Main from "@/pages/index/Main";
 import "@/assets/css/common.css";
 
+function formatPdfTimestamp() {
+  const now = new Date();
+  const yy = String(now.getFullYear()).slice(-2);
+  const mm = String(now.getMonth() + 1).padStart(2, "0");
+  const dd = String(now.getDate()).padStart(2, "0");
+  const hh = String(now.getHours()).padStart(2, "0");
+  const min = String(now.getMinutes()).padStart(2, "0");
+  return `${yy}${mm}${dd}-${hh}${min}`;
+}
+
 export default function Index() {
+  const clickCountRef = useRef(0);
+  const resetTimerRef = useRef<number | null>(null);
+
+  const handleHiddenCornerClick = () => {
+    if (resetTimerRef.current !== null) {
+      window.clearTimeout(resetTimerRef.current);
+    }
+
+    clickCountRef.current += 1;
+
+    if (clickCountRef.current >= 5) {
+      clickCountRef.current = 0;
+      resetTimerRef.current = null;
+
+      const prevTitle = document.title;
+      document.title = `resume_이진우_${formatPdfTimestamp()}`;
+      window.addEventListener(
+        "afterprint",
+        () => {
+          document.title = prevTitle;
+        },
+        { once: true }
+      );
+      window.print();
+      return;
+    }
+
+    resetTimerRef.current = window.setTimeout(() => {
+      clickCountRef.current = 0;
+      resetTimerRef.current = null;
+    }, 2000);
+  };
+
   return (
     <>
+      <Box
+        component="button"
+        type="button"
+        aria-hidden="true"
+        tabIndex={-1}
+        onClick={handleHiddenCornerClick}
+        sx={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: 64,
+          height: 64,
+          p: 0,
+          m: 0,
+          border: 0,
+          bgcolor: "transparent",
+          opacity: 0,
+          cursor: "default",
+          zIndex: 9999,
+          "@media print": {
+            display: "none",
+          },
+        }}
+      />
       <Header />
       <Main />
       {/* <Footer /> */}
