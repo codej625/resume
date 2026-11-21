@@ -237,12 +237,6 @@ export const projects: Project[] = [
         title: "데이터베이스 ERD 작업",
         bullets: [],
       },
-      {
-        title: "형상 관리",
-        bullets: [
-          "Git Flow 브랜치 전략 적용 (master, hotfix, release, develop, feature 등)",
-        ],
-      },
     ],
   },
   {
@@ -277,12 +271,6 @@ export const projects: Project[] = [
       {
         title: "데이터베이스 ERD 작업",
         bullets: [],
-      },
-      {
-        title: "형상 관리",
-        bullets: [
-          "Git Flow 브랜치 전략 적용 (master, hotfix, release, develop, feature 등)",
-        ],
       },
     ],
   },
@@ -335,10 +323,6 @@ export const projects: Project[] = [
         title: "데이터베이스 ERD 작업",
         bullets: [],
       },
-      {
-        title: "형상 관리 (AWS CodeCommit)",
-        bullets: [],
-      },
     ],
   },
   {
@@ -374,10 +358,6 @@ export const projects: Project[] = [
         bullets: [],
       },
       {
-        title: "형상 관리 (AWS CodeCommit)",
-        bullets: [],
-      },
-      {
         title: "PC/모바일 웹 퍼블리싱 작업",
         bullets: ["디자인팀과 협업하여 UI / UX 개선"],
       },
@@ -397,10 +377,6 @@ export const projects: Project[] = [
       },
       {
         title: "데이터베이스 관리 (AWS RDS)",
-        bullets: [],
-      },
-      {
-        title: "형상 관리 (AWS CodeCommit)",
         bullets: [],
       },
     ],
@@ -436,10 +412,6 @@ export const projects: Project[] = [
         bullets: ["네이버 서치어드바이저 기준 모든 조건 통과"],
       },
       {
-        title: "형상 관리",
-        bullets: ["AWS CodeCommit, SVN"],
-      },
-      {
         title: "PC/모바일 웹 퍼블리싱 작업",
         bullets: [],
       },
@@ -457,10 +429,6 @@ export const projects: Project[] = [
       {
         title: "사내 팀 별 일정 관리 기능 개발 (어드민)",
         bullets: ["프로젝트 일정 관리 효율성 대폭 향상, 팀 내 작업 지연률 40% 이상 감소"],
-      },
-      {
-        title: "형상 관리 (AWS CodeCommit)",
-        bullets: [],
       },
       {
         title: "PC/모바일 웹 퍼블리싱 작업",
@@ -484,10 +452,6 @@ export const projects: Project[] = [
       {
         title: "네이버 크롤링을 통한 키워드 수집 기능 개발",
         bullets: ["배치, 스케줄링으로 네이버 검색 결과를 크롤링하고 키워드 데이터 수집"],
-      },
-      {
-        title: "형상 관리 (AWS CodeCommit)",
-        bullets: [],
       },
       {
         title: "PC/모바일 웹 퍼블리싱 작업",
