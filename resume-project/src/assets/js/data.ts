@@ -225,7 +225,7 @@ export const projects: Project[] = [
       {
         title: "프론트엔드 개발",
         bullets: [
-          "CVE/CWE/CPE/CAPEC 등 보안 취약점 정보를 그리드 형태로 시각화하는 UI 구현",
+          "CVE / CWE / CPE / CAPEC 등 보안 취약점 정보를 그리드 형태로 시각화하는 UI 구현",
           "대용량 SBOM 컴포넌트, 취약점 목록에 서버 사이드 페이징 및 심각도(CVSS), 패키지 다중 필터링 적용",
         ],
       },
