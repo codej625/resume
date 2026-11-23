@@ -386,10 +386,16 @@ section:nth-child(5) > .container > div > div {
     background-color: #ffffff !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
+    overflow: visible !important;
   }
 
   header {
     display: none !important;
+  }
+
+  main,
+  main * {
+    overflow: visible !important;
   }
 
   main .MuiPaper-root {
@@ -399,6 +405,7 @@ section:nth-child(5) > .container > div > div {
     margin-bottom: 20px !important;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+    overflow: visible !important;
   }
 
   main #projects.MuiPaper-root {
@@ -412,5 +419,11 @@ section:nth-child(5) > .container > div > div {
 
   main h2 {
     break-after: avoid;
+  }
+
+  main p,
+  main .MuiTypography-root {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
   }
 }

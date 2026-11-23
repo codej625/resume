@@ -186,7 +186,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "프로원 광고사이트 및 CRM 개발",
+    title: "프로원 광고 사이트 및 CRM 개발",
     company: "RAD.",
     tasks: [
       {
@@ -398,7 +398,7 @@ export const projects: Project[] = [
   },
   {
     title:
-      "주요 보험사 공식다이렉트몰 웹 서비스 운영 및 보안 SM 업무\n(롯데손보 / 흥국생명 / 한화손보)",
+      "주요 보험사 공식 다이렉트몰 웹 서비스 운영 및 보안 SM 업무\n(롯데손보 / 흥국생명 / 한화손보)",
     company: "엠플랜잇",
     tasks: [
       {
@@ -444,7 +444,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "키딕 (Keydig) 키워드 분석 솔루션 개발 (애드테크 은상 수상)",
+    title: "키딕 (KeyDig) 키워드 분석 솔루션 개발 (애드테크 은상 수상)",
     company: "엠플랜잇",
     tasks: [
       {

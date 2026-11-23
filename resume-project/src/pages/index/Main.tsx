@@ -470,14 +470,14 @@ export default function Main() {
                     lines: [
                       "Back-end",
                       "- Spring Boot / NestJS / FastAPI",
-                      "Front-End",
+                      "Front-end",
                       "- React / Next.js / jQuery",
                     ],
                   },
                   {
                     title: "Tool",
                     lines: [
-                      "VSC / Cursor / IntelliJ / Postman / PuTTY",
+                      "VS Code / Cursor / IntelliJ / Postman / PuTTY",
                       "FileZilla / Git / Apache JMeter / DBeaver / iTerm",
                     ],
                   },
@@ -491,14 +491,14 @@ export default function Main() {
                   },
                   {
                     title: "OS",
-                    lines: ["MacOS / Linux (Ubuntu) / Windows"],
+                    lines: ["macOS / Linux (Ubuntu) / Windows"],
                   },
                   {
                     title: "Database",
                     lines: ["Oracle / MySQL / PostgreSQL / AWS RDS"],
                   },
                   {
-                    title: "Cloud, DevOps",
+                    title: "Cloud / DevOps",
                     lines: [
                       "AWS / Cloudflare / Nginx / Apache Tomcat",
                       "Hyper-V (VM) / Kubernetes / Docker / Jenkins",
@@ -519,7 +519,7 @@ export default function Main() {
                     </Typography>
                     <Box sx={{ pl: 2 }}>
                       {group.lines.map((line) => {
-                        const isGroupLabel = line === "Back-end" || line === "Front-End";
+                        const isGroupLabel = line === "Back-end" || line === "Front-end";
                         return (
                           <Typography
                             key={line}

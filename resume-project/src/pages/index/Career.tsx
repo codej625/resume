@@ -27,8 +27,7 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
     <Box
       sx={{
         "@media print": {
-          breakInside: "avoid",
-          pageBreakInside: "avoid",
+          overflow: "visible",
           ...(!isLast && {
             pb: 3,
             mb: 3,
@@ -66,6 +65,7 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
               "@media print": {
                 breakInside: "avoid",
                 pageBreakInside: "avoid",
+                overflow: "visible",
               },
             }}
           >
@@ -81,8 +81,16 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
                   const text = typeof bullet === "string" ? bullet : bullet.text;
                   const children = typeof bullet === "string" ? [] : (bullet.children ?? []);
                   return (
-                    <Box key={text}>
-                      <Typography variant="body1" sx={{ color: "text.secondary", lineHeight: 1.7 }}>
+                    <Box key={text} sx={{ "@media print": { overflow: "visible" } }}>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "text.secondary",
+                          lineHeight: 1.7,
+                          wordBreak: "keep-all",
+                          overflowWrap: "anywhere",
+                        }}
+                      >
                         {bulletIndex + 1}) {text}
                       </Typography>
                       {children.length > 0 && (
@@ -99,7 +107,14 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
                               <Typography
                                 component="span"
                                 variant="body1"
-                                sx={{ color: "text.secondary", lineHeight: 1.7, flex: "1 1 auto", minWidth: 0 }}
+                                sx={{
+                                  color: "text.secondary",
+                                  lineHeight: 1.7,
+                                  flex: "1 1 auto",
+                                  minWidth: 0,
+                                  wordBreak: "keep-all",
+                                  overflowWrap: "anywhere",
+                                }}
                               >
                                 {child}
                               </Typography>
@@ -175,8 +190,7 @@ export default function Career() {
               key={career.company}
               sx={{
                 "@media print": {
-                  breakInside: "avoid",
-                  pageBreakInside: "avoid",
+                  overflow: "visible",
                   ...(index < careers.length - 1 && {
                     pb: 2.5,
                     mb: 2.5,
@@ -186,24 +200,46 @@ export default function Career() {
                 },
               }}
             >
-              <Typography
-                variant="h6"
+              <Box
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  columnGap: "0.3rem",
-                  fontWeight: weight.medium,
+                  "@media print": {
+                    breakInside: "avoid",
+                    breakAfter: "avoid",
+                  },
                 }}
               >
-                {career.company} ({career.period})
-              </Typography>
-              <Typography variant="body1" sx={{ color: "text.secondary", display: "block", mt: 0.5, fontWeight: weight.regular }}>
-                {career.domain} · {career.department} {career.position}
-              </Typography>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    columnGap: "0.3rem",
+                    fontWeight: weight.medium,
+                  }}
+                >
+                  {career.company} ({career.period})
+                </Typography>
+                <Typography
+                  variant="body1"
+                  sx={{ color: "text.secondary", display: "block", mt: 0.5, fontWeight: weight.regular }}
+                >
+                  {career.domain} · {career.department} {career.position}
+                </Typography>
+              </Box>
               <Stack spacing={0.5} sx={{ mt: 1.5 }}>
                 {career.duties.map((duty) => (
-                  <Typography variant="body1" key={duty} sx={{ lineHeight: 1.7, fontWeight: weight.regular }}>
+                  <Typography
+                    variant="body1"
+                    key={duty}
+                    sx={{
+                      lineHeight: 1.7,
+                      fontWeight: weight.regular,
+                      wordBreak: "keep-all",
+                      overflowWrap: "anywhere",
+                      "@media print": { breakInside: "avoid" },
+                    }}
+                  >
                     - {duty}
                   </Typography>
                 ))}
