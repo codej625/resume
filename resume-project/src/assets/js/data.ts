@@ -143,7 +143,7 @@ export const serviceLaunches: ServiceLaunchItem[] = [
     name: "RAD.",
     domain: "MD 플랫폼",
     role: "CTO",
-    period: "2026.02 ~ 운영 중",
+    period: "2026.01 ~ 운영 중",
     duties: [
       "MD 업무 자동화 플랫폼 기획 (PM) 및 개발",
       "클라이언트 미팅 및 컨설팅",
