@@ -22,9 +22,22 @@ const sectionTitleSx = {
   borderColor: "primary.main",
 } as const;
 
-function ProjectBlock({ project }: { project: Project }) {
+function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }) {
   return (
-    <Box>
+    <Box
+      sx={{
+        "@media print": {
+          breakInside: "avoid",
+          pageBreakInside: "avoid",
+          ...(!isLast && {
+            pb: 3,
+            mb: 3,
+            borderBottom: "1px solid",
+            borderColor: "divider",
+          }),
+        },
+      }}
+    >
       <Stack
         spacing={2}
         sx={{
@@ -47,7 +60,15 @@ function ProjectBlock({ project }: { project: Project }) {
       </Stack>
       <Stack spacing={1.5} sx={{ pl: 2, "@media print": { display: "block" } }}>
         {project.tasks.map((task, index) => (
-          <Box key={task.title}>
+          <Box
+            key={task.title}
+            sx={{
+              "@media print": {
+                breakInside: "avoid",
+                pageBreakInside: "avoid",
+              },
+            }}
+          >
             <Typography
               variant="body1"
               sx={{ fontWeight: weight.medium, "@media print": { breakAfter: "avoid" } }}
@@ -139,9 +160,32 @@ export default function Career() {
         <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontWeight: weight.regular }}>
           총 재직기간 {totalTenure}
         </Typography>
-        <Stack spacing={3} divider={<Divider flexItem />} sx={{ "@media print": { display: "block" } }}>
-          {careers.map((career) => (
-            <Box key={career.company}>
+        <Stack
+          spacing={3}
+          divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />}
+          sx={{
+            "@media print": {
+              display: "block",
+              "& > :not(style) ~ :not(style)": { mt: 0 },
+            },
+          }}
+        >
+          {careers.map((career, index) => (
+            <Box
+              key={career.company}
+              sx={{
+                "@media print": {
+                  breakInside: "avoid",
+                  pageBreakInside: "avoid",
+                  ...(index < careers.length - 1 && {
+                    pb: 2.5,
+                    mb: 2.5,
+                    borderBottom: "1px solid",
+                    borderColor: "divider",
+                  }),
+                },
+              }}
+            >
               <Typography
                 variant="h6"
                 sx={{
@@ -222,9 +266,22 @@ export function Projects() {
         <Typography variant="h5" component="h2" sx={sectionTitleSx}>
           프로젝트
         </Typography>
-        <Stack spacing={4} divider={<Divider flexItem />} sx={{ "@media print": { display: "block" } }}>
-          {projects.map((project) => (
-            <ProjectBlock key={`${project.company}-${project.title}`} project={project} />
+        <Stack
+          spacing={4}
+          divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />}
+          sx={{
+            "@media print": {
+              display: "block",
+              "& > :not(style) ~ :not(style)": { mt: 0 },
+            },
+          }}
+        >
+          {projects.map((project, index) => (
+            <ProjectBlock
+              key={`${project.company}-${project.title}`}
+              project={project}
+              isLast={index === projects.length - 1}
+            />
           ))}
         </Stack>
       </Paper>

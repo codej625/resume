@@ -41,7 +41,7 @@ export interface ServiceLaunchItem {
 export const advisories: Advisory[] = [
   {
     organization: "프로원",
-    period: "2026.06 ~ 2026.06",
+    period: "2026.02 ~ 2026.05",
     description: "온라인 전환 중개 플랫폼 운영",
   },
   {
@@ -143,7 +143,7 @@ export const serviceLaunches: ServiceLaunchItem[] = [
     name: "RAD.",
     domain: "MD 플랫폼",
     role: "CTO",
-    period: "2026.03 ~ 운영 중",
+    period: "2026.02 ~ 운영 중",
     duties: [
       "MD 업무 자동화 플랫폼 기획 (PM) 및 개발",
       "클라이언트 미팅 및 컨설팅",

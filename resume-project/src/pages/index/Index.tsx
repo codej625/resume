@@ -5,16 +5,6 @@ import Header from "@/pages/index/Header";
 import Main from "@/pages/index/Main";
 import "@/assets/css/common.css";
 
-function formatPdfTimestamp() {
-  const now = new Date();
-  const yy = String(now.getFullYear()).slice(-2);
-  const mm = String(now.getMonth() + 1).padStart(2, "0");
-  const dd = String(now.getDate()).padStart(2, "0");
-  const hh = String(now.getHours()).padStart(2, "0");
-  const min = String(now.getMinutes()).padStart(2, "0");
-  return `${yy}${mm}${dd}-${hh}${min}`;
-}
-
 export default function Index() {
   const clickCountRef = useRef(0);
   const resetTimerRef = useRef<number | null>(null);
@@ -31,7 +21,7 @@ export default function Index() {
       resetTimerRef.current = null;
 
       const prevTitle = document.title;
-      document.title = `resume_이진우_${formatPdfTimestamp()}`;
+      document.title = "이진우 이력서";
       window.addEventListener(
         "afterprint",
         () => {
