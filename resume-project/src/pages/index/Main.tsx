@@ -7,7 +7,7 @@ import {
   Paper,
 } from "@mui/material";
 import identificationPicture from "@/assets/img/identification_picture.jpg";
-import Career, { Advisory, Projects } from "@/pages/index/Career";
+import Career, { Advisory, Projects, ServiceLaunch } from "@/pages/index/Career";
 import { fontWeight as weight } from "@/assets/css/font";
 
 export default function Main() {
@@ -438,6 +438,8 @@ export default function Main() {
             <Advisory />
 
             <Career />
+
+            <ServiceLaunch />
 
             {/* Skills */}
             <Paper elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>

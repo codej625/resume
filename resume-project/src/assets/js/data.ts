@@ -31,6 +31,14 @@ export interface Advisory {
   description: string;
 }
 
+export interface ServiceLaunchItem {
+  name: string;
+  domain: string;
+  role: string;
+  period: string;
+  duties: string[];
+}
+
 export const advisories: Advisory[] = [
   {
     organization: "프로원",
@@ -128,37 +136,53 @@ function formatMonths(months: number) {
 
 export const totalTenure = formatMonths(careers.reduce((sum, career) => sum + careerMonths(career.period), 0));
 
+export const serviceLaunches: ServiceLaunchItem[] = [
+  {
+    name: "RAD.",
+    domain: "MD 플랫폼",
+    role: "CTO",
+    period: "2026.03 ~ 운영 중",
+    duties: [
+      "MD 업무 자동화 플랫폼 기획 (PM) 및 개발",
+      "클라이언트 미팅 및 컨설팅",
+      "베어메탈 서버 및 인프라 구축·운영",
+      "데이터베이스 ERD 설계 및 정규화",
+      "웹 퍼블리싱 및 UX 기획",
+    ],
+  },
+];
+
 export const projects: Project[] = [
-  // {
-  //   title: "MD 업무 자동화 플랫폼 및 브랜드 사이트 개발",
-  //   company: "RAD.",
-  //   period: "2026.03 ~ 2026.10",
-  //   tasks: [
-  //     {
-  //       title: "프로젝트 기획 (PM)",
-  //       bullets: [
-  //         "헤드 MD 및 실무자와의 요구사항 인터뷰를 통해 플랫폼 설계에 필요한 전체 업무 프로세스 분석 및 도메인 지식 체계화",
-  //       ],
-  //     },
-  //     {
-  //       title: "Cloudflare 기반 브랜드 사이트 구축",
-  //       bullets: [
-  //         "Cloudflare Workers 기반 SSG/SSR 렌더링 방식으로 호스팅 비용 절감 (Free-tier 활용으로 일정 트래픽 도달 시까지 인프라 비용 0원 운영)",
-  //       ],
-  //     },
-  //     {
-  //       title: "MD 플랫폼 개발",
-  //       bullets: [
-  //         "베어 메탈 서버 운영 (Windows 11 Pro Hyper-V 사용)",
-  //         "K3s를 도입하여 로컬 환경 구축 및 향후 AWS 전환 시, 즉시 EKS로 마이그레이션 가능한 컨테이너 오케스트레이션 구조 설계",
-  //       ],
-  //     },
-  //     {
-  //       title: "데이터베이스 ERD 작업",
-  //       bullets: ["정규화 작업 및 Relation 최적화"],
-  //     },
-  //   ],
-  // },
+  {
+    title: "MD 업무 자동화 플랫폼 및 브랜드 사이트 개발",
+    company: "RAD.",
+    period: "2026.03 ~ 2026.10",
+    tasks: [
+      {
+        title: "프로젝트 기획 (PM)",
+        bullets: [
+          "헤드 MD 및 실무자와의 요구사항 인터뷰를 통해 플랫폼 설계에 필요한 전체 업무 프로세스 분석 및 도메인 지식 체계화",
+        ],
+      },
+      {
+        title: "Cloudflare 기반 브랜드 사이트 구축",
+        bullets: [
+          "Cloudflare Workers 기반 SSG/SSR 렌더링 방식으로 호스팅 비용 절감 (Free-tier 활용으로 일정 트래픽 도달 시까지 인프라 비용 0원 운영)",
+        ],
+      },
+      {
+        title: "MD 플랫폼 개발",
+        bullets: [
+          "베어 메탈 서버 운영 (Windows 11 Pro Hyper-V 사용)",
+          "K3s를 도입하여 로컬 환경 구축 및 향후 AWS 전환 시, 즉시 EKS로 마이그레이션 가능한 컨테이너 오케스트레이션 구조 설계",
+        ],
+      },
+      {
+        title: "데이터베이스 ERD 작업",
+        bullets: ["정규화 작업 및 Relation 최적화"],
+      },
+    ],
+  },
   {
     title: "공급망 보안 관리 솔루션 AEZIZ 3.0",
     company: "쿤텍",

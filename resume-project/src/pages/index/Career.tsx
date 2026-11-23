@@ -1,5 +1,5 @@
 import { Box, Chip, Divider, Paper, Stack, Typography } from "@mui/material";
-import { advisories, careers, projects, totalTenure, type Project } from "@/assets/js/data";
+import { advisories, careers, projects, serviceLaunches, totalTenure, type Project } from "@/assets/js/data";
 import { fontWeight as weight } from "@/assets/css/font";
 
 const companyChipSx = {
@@ -168,6 +168,51 @@ export default function Career() {
           ))}
         </Stack>
       </Paper>
+  );
+}
+
+export function ServiceLaunch() {
+  return (
+    <Paper
+      id="serviceLaunch"
+      elevation={2}
+      sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}
+    >
+      <Typography variant="h5" component="h2" sx={sectionTitleSx}>
+        서비스 런칭
+      </Typography>
+      <Stack spacing={3} divider={<Divider flexItem />} sx={{ "@media print": { display: "block" } }}>
+        {serviceLaunches.map((item) => (
+          <Box key={item.name}>
+            <Typography
+              variant="h6"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                columnGap: "0.3rem",
+                fontWeight: weight.medium,
+              }}
+            >
+              {item.name} ({item.period})
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ color: "text.secondary", display: "block", mt: 0.5, fontWeight: weight.regular }}
+            >
+              {item.domain} · {item.role}
+            </Typography>
+            <Stack spacing={0.5} sx={{ mt: 1.5 }}>
+              {item.duties.map((duty) => (
+                <Typography variant="body1" key={duty} sx={{ lineHeight: 1.7, fontWeight: weight.regular }}>
+                  - {duty}
+                </Typography>
+              ))}
+            </Stack>
+          </Box>
+        ))}
+      </Stack>
+    </Paper>
   );
 }
 
