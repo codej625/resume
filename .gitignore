@@ -27,3 +27,6 @@ dist-ssr
 
 # Local scripts
 deploy.sh
+
+# Documents
+*.docx
