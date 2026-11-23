@@ -46,12 +46,11 @@ function ProjectBlock({
   return (
     <Box
       sx={{
-        // 경력 사항과 동일하게 구분선 위·아래 여백을 맞춤
+        // 구분선은 없이 위·아래 여백만 유지
         ...(!isLast && {
           pb: 2.5,
           mb: 2.5,
-          borderBottom: "1px solid",
-          borderColor: "divider",
+          borderBottom: 0,
         }),
       }}
     >
