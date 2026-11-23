@@ -8,6 +8,13 @@ const companyChipSx = {
   fontWeight: weight.medium,
 } as const;
 
+const printBlockSx = {
+  "@media print": {
+    display: "block",
+    "& > :not(style) ~ :not(style)": { mt: 0 },
+  },
+} as const;
+
 function formatPeriod(period: string) {
   const [start, end] = period.split(" ~ ");
   if (start && end === start) return start;
@@ -27,7 +34,6 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
     <Box
       sx={{
         "@media print": {
-          overflow: "visible",
           ...(!isLast && {
             pb: 3,
             mb: 3,
@@ -37,35 +43,33 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
         },
       }}
     >
-      <Stack
-        spacing={2}
+      <Box
         sx={{
           mb: 1.5,
           "@media print": {
-            display: "block",
             breakInside: "avoid",
+            pageBreakInside: "avoid",
             breakAfter: "avoid",
           },
         }}
       >
-        <Box>
-          <Box sx={{ mb: "8px" }}>
-            <Chip label={project.company} sx={companyChipSx} />
-          </Box>
+        <Box sx={{ mb: "8px" }}>
+          <Chip label={project.company} sx={companyChipSx} />
         </Box>
         <Typography variant="h6" sx={{ fontWeight: weight.medium, lineHeight: 1.4, whiteSpace: "pre-line" }}>
           {project.title}
         </Typography>
-      </Stack>
-      <Stack spacing={1.5} sx={{ pl: 2, "@media print": { display: "block" } }}>
+      </Box>
+      <Box sx={{ pl: 2, ...printBlockSx }}>
         {project.tasks.map((task, index) => (
           <Box
             key={task.title}
             sx={{
+              mb: 1.5,
               "@media print": {
                 breakInside: "avoid",
                 pageBreakInside: "avoid",
-                overflow: "visible",
+                mb: 1.5,
               },
             }}
           >
@@ -76,12 +80,12 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
               {index + 1}. {task.title}
             </Typography>
             {task.bullets.length > 0 && (
-              <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2, "@media print": { display: "block" } }}>
+              <Box sx={{ mt: 0.5, pl: 2, ...printBlockSx }}>
                 {task.bullets.map((bullet, bulletIndex) => {
                   const text = typeof bullet === "string" ? bullet : bullet.text;
                   const children = typeof bullet === "string" ? [] : (bullet.children ?? []);
                   return (
-                    <Box key={text} sx={{ "@media print": { overflow: "visible" } }}>
+                    <Box key={text} sx={{ mb: 0.5 }}>
                       <Typography
                         variant="body1"
                         sx={{
@@ -94,42 +98,31 @@ function ProjectBlock({ project, isLast }: { project: Project; isLast: boolean }
                         {bulletIndex + 1}) {text}
                       </Typography>
                       {children.length > 0 && (
-                        <Stack spacing={0.5} sx={{ mt: 0.5, pl: 2, "@media print": { display: "block" } }}>
+                        <Box sx={{ mt: 0.5, pl: 2, ...printBlockSx }}>
                           {children.map((child) => (
-                            <Box key={child} sx={{ display: "flex", columnGap: "0.35rem" }}>
-                              <Typography
-                                component="span"
-                                variant="body1"
-                                sx={{ color: "text.secondary", lineHeight: 1.7, flex: "0 0 auto" }}
-                              >
-                                -
-                              </Typography>
-                              <Typography
-                                component="span"
-                                variant="body1"
-                                sx={{
-                                  color: "text.secondary",
-                                  lineHeight: 1.7,
-                                  flex: "1 1 auto",
-                                  minWidth: 0,
-                                  wordBreak: "keep-all",
-                                  overflowWrap: "anywhere",
-                                }}
-                              >
-                                {child}
-                              </Typography>
-                            </Box>
+                            <Typography
+                              key={child}
+                              variant="body1"
+                              sx={{
+                                color: "text.secondary",
+                                lineHeight: 1.7,
+                                wordBreak: "keep-all",
+                                overflowWrap: "anywhere",
+                              }}
+                            >
+                              - {child}
+                            </Typography>
                           ))}
-                        </Stack>
+                        </Box>
                       )}
                     </Box>
                   );
                 })}
-              </Stack>
+              </Box>
             )}
           </Box>
         ))}
-      </Stack>
+      </Box>
     </Box>
   );
 }
@@ -144,13 +137,13 @@ export function Advisory() {
         mt: { xs: 0 },
         mb: { xs: 2, md: 4 },
         bgcolor: "background.paper",
-        "@media print": { breakInside: "avoid" },
+        "@media print": { breakInside: "avoid", pageBreakInside: "avoid" },
       }}
     >
       <Typography variant="h5" component="h2" sx={sectionTitleSx}>
         자문
       </Typography>
-      <Stack spacing={1.5}>
+      <Stack spacing={1.5} sx={printBlockSx}>
         {advisories.map((item) => (
           <Box key={item.organization}>
             <Typography variant="h6" sx={{ mb: 0.5, fontWeight: weight.medium }}>
@@ -168,86 +161,76 @@ export function Advisory() {
 
 export default function Career() {
   return (
-      <Paper id="workExperience" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
-        <Typography variant="h5" component="h2" sx={sectionTitleSx}>
-          경력 사항
-        </Typography>
-        <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontWeight: weight.regular }}>
-          총 재직기간 {totalTenure}
-        </Typography>
-        <Stack
-          spacing={3}
-          divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />}
-          sx={{
-            "@media print": {
-              display: "block",
-              "& > :not(style) ~ :not(style)": { mt: 0 },
-            },
-          }}
-        >
-          {careers.map((career, index) => (
-            <Box
-              key={career.company}
+    <Paper
+      id="workExperience"
+      elevation={2}
+      sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}
+    >
+      <Typography variant="h5" component="h2" sx={sectionTitleSx}>
+        경력 사항
+      </Typography>
+      <Typography variant="body1" sx={{ color: "text.secondary", mb: 3, fontWeight: weight.regular }}>
+        총 재직기간 {totalTenure}
+      </Typography>
+      <Stack
+        spacing={3}
+        divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />}
+        sx={printBlockSx}
+      >
+        {careers.map((career, index) => (
+          <Box
+            key={career.company}
+            sx={{
+              "@media print": {
+                breakInside: "avoid",
+                pageBreakInside: "avoid",
+                ...(index < careers.length - 1 && {
+                  pb: 2.5,
+                  mb: 2.5,
+                  borderBottom: "1px solid",
+                  borderColor: "divider",
+                }),
+              },
+            }}
+          >
+            <Typography
+              variant="h6"
               sx={{
-                "@media print": {
-                  overflow: "visible",
-                  ...(index < careers.length - 1 && {
-                    pb: 2.5,
-                    mb: 2.5,
-                    borderBottom: "1px solid",
-                    borderColor: "divider",
-                  }),
-                },
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                columnGap: "0.3rem",
+                fontWeight: weight.medium,
               }}
             >
-              <Box
-                sx={{
-                  "@media print": {
-                    breakInside: "avoid",
-                    breakAfter: "avoid",
-                  },
-                }}
-              >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                    columnGap: "0.3rem",
-                    fontWeight: weight.medium,
-                  }}
-                >
-                  {career.company} ({career.period})
-                </Typography>
+              {career.company} ({career.period})
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ color: "text.secondary", display: "block", mt: 0.5, fontWeight: weight.regular }}
+            >
+              {career.domain} · {career.department} {career.position}
+            </Typography>
+            <Box sx={{ mt: 1.5, ...printBlockSx }}>
+              {career.duties.map((duty) => (
                 <Typography
                   variant="body1"
-                  sx={{ color: "text.secondary", display: "block", mt: 0.5, fontWeight: weight.regular }}
+                  key={duty}
+                  sx={{
+                    lineHeight: 1.7,
+                    fontWeight: weight.regular,
+                    wordBreak: "keep-all",
+                    overflowWrap: "anywhere",
+                  }}
                 >
-                  {career.domain} · {career.department} {career.position}
+                  - {duty}
                 </Typography>
-              </Box>
-              <Stack spacing={0.5} sx={{ mt: 1.5 }}>
-                {career.duties.map((duty) => (
-                  <Typography
-                    variant="body1"
-                    key={duty}
-                    sx={{
-                      lineHeight: 1.7,
-                      fontWeight: weight.regular,
-                      wordBreak: "keep-all",
-                      overflowWrap: "anywhere",
-                      "@media print": { breakInside: "avoid" },
-                    }}
-                  >
-                    - {duty}
-                  </Typography>
-                ))}
-              </Stack>
+              ))}
             </Box>
-          ))}
-        </Stack>
-      </Paper>
+          </Box>
+        ))}
+      </Stack>
+    </Paper>
   );
 }
 
@@ -256,12 +239,18 @@ export function ServiceLaunch() {
     <Paper
       id="serviceLaunch"
       elevation={2}
-      sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}
+      sx={{
+        p: 4,
+        mt: { xs: 0 },
+        mb: { xs: 2, md: 4 },
+        bgcolor: "background.paper",
+        "@media print": { breakInside: "avoid", pageBreakInside: "avoid" },
+      }}
     >
       <Typography variant="h5" component="h2" sx={sectionTitleSx}>
         서비스 런칭
       </Typography>
-      <Stack spacing={3} divider={<Divider flexItem />} sx={{ "@media print": { display: "block" } }}>
+      <Stack spacing={3} divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />} sx={printBlockSx}>
         {serviceLaunches.map((item) => (
           <Box key={item.name}>
             <Typography
@@ -282,13 +271,13 @@ export function ServiceLaunch() {
             >
               {item.domain} · {item.role}
             </Typography>
-            <Stack spacing={0.5} sx={{ mt: 1.5 }}>
+            <Box sx={{ mt: 1.5, ...printBlockSx }}>
               {item.duties.map((duty) => (
                 <Typography variant="body1" key={duty} sx={{ lineHeight: 1.7, fontWeight: weight.regular }}>
                   - {duty}
                 </Typography>
               ))}
-            </Stack>
+            </Box>
           </Box>
         ))}
       </Stack>
@@ -298,28 +287,23 @@ export function ServiceLaunch() {
 
 export function Projects() {
   return (
-      <Paper id="projects" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: 0, bgcolor: "background.paper" }}>
-        <Typography variant="h5" component="h2" sx={sectionTitleSx}>
-          프로젝트
-        </Typography>
-        <Stack
-          spacing={4}
-          divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />}
-          sx={{
-            "@media print": {
-              display: "block",
-              "& > :not(style) ~ :not(style)": { mt: 0 },
-            },
-          }}
-        >
-          {projects.map((project, index) => (
-            <ProjectBlock
-              key={`${project.company}-${project.title}`}
-              project={project}
-              isLast={index === projects.length - 1}
-            />
-          ))}
-        </Stack>
-      </Paper>
+    <Paper id="projects" elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: 0, bgcolor: "background.paper" }}>
+      <Typography variant="h5" component="h2" sx={sectionTitleSx}>
+        프로젝트
+      </Typography>
+      <Stack
+        spacing={4}
+        divider={<Divider flexItem sx={{ "@media print": { display: "none" } }} />}
+        sx={printBlockSx}
+      >
+        {projects.map((project, index) => (
+          <ProjectBlock
+            key={`${project.company}-${project.title}`}
+            project={project}
+            isLast={index === projects.length - 1}
+          />
+        ))}
+      </Stack>
+    </Paper>
   );
 }

@@ -377,7 +377,7 @@ section:nth-child(5) > .container > div > div {
 
 @page {
   size: A4 portrait;
-  margin: 12mm;
+  margin: 14mm 12mm;
 }
 
 @media print {
@@ -387,10 +387,17 @@ section:nth-child(5) > .container > div > div {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     overflow: visible !important;
+    height: auto !important;
   }
 
   header {
     display: none !important;
+  }
+
+  /* flex/grid는 Chrome 인쇄 시 페이지 나눔·클리핑 버그를 유발하므로 block으로 강제 */
+  main .MuiStack-root,
+  main .MuiGrid-root {
+    display: block !important;
   }
 
   main,
@@ -400,12 +407,15 @@ section:nth-child(5) > .container > div > div {
 
   main .MuiPaper-root {
     box-shadow: none !important;
-    border: 1px solid #e5e7eb;
-    padding: 24px !important;
-    margin-bottom: 20px !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 0 !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    overflow: visible !important;
+    break-inside: auto;
+    page-break-inside: auto;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    overflow: visible !important;
   }
 
   main #projects.MuiPaper-root {
@@ -413,12 +423,12 @@ section:nth-child(5) > .container > div > div {
   }
 
   main .MuiDivider-root {
-    align-self: auto !important;
-    height: auto !important;
+    display: none !important;
   }
 
   main h2 {
     break-after: avoid;
+    page-break-after: avoid;
   }
 
   main p,

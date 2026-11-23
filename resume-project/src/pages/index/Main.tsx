@@ -456,7 +456,15 @@ export default function Main() {
               >
                 보유 기술
               </Typography>
-              <Stack spacing={2.5} sx={{ "@media print": { display: "block" } }}>
+              <Stack
+                spacing={2.5}
+                sx={{
+                  "@media print": {
+                    display: "block",
+                    "& > :not(style) ~ :not(style)": { mt: 0 },
+                  },
+                }}
+              >
                 {[
                   {
                     title: "Language",
@@ -509,7 +517,16 @@ export default function Main() {
                     lines: ["SEO / GEO / i18n / Harness Engineering"],
                   },
                 ].map((group) => (
-                  <Box key={group.title} sx={{ "@media print": { breakInside: "avoid" } }}>
+                  <Box
+                    key={group.title}
+                    sx={{
+                      "@media print": {
+                        breakInside: "avoid",
+                        pageBreakInside: "avoid",
+                        mb: 2,
+                      },
+                    }}
+                  >
                     <Typography
                       variant="h6"
                       component="h3"
