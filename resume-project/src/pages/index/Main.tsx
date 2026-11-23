@@ -491,17 +491,17 @@ export default function Main() {
                   },
                   {
                     title: "OS",
-                    lines: ["MacOS / Linux (Ubuntu / Windows)"],
+                    lines: ["MacOS / Linux (Ubuntu) / Windows"],
                   },
                   {
                     title: "Database",
-                    lines: ["Oracle / MySQL / PostgreSQL / AWS RDB"],
+                    lines: ["Oracle / MySQL / PostgreSQL / AWS RDS"],
                   },
                   {
                     title: "Cloud, DevOps",
                     lines: [
                       "AWS / Cloudflare / Nginx / Apache Tomcat",
-                      "Hyper-V (VM) / K8s (K3s) / Docker / Jenkins",
+                      "Hyper-V (VM) / Kubernetes / Docker / Jenkins",
                     ],
                   },
                   {
