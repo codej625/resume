@@ -394,12 +394,6 @@ section:nth-child(5) > .container > div > div {
     display: none !important;
   }
 
-  /* flex/grid는 Chrome 인쇄 시 페이지 나눔·클리핑 버그를 유발하므로 block으로 강제 */
-  main .MuiStack-root,
-  main .MuiGrid-root {
-    display: block !important;
-  }
-
   main,
   main * {
     overflow: visible !important;
@@ -407,10 +401,9 @@ section:nth-child(5) > .container > div > div {
 
   main .MuiPaper-root {
     box-shadow: none !important;
-    border: 1px solid #e5e7eb !important;
-    border-radius: 0 !important;
-    padding: 20px !important;
-    margin-bottom: 16px !important;
+    border: 1px solid #e5e7eb;
+    padding: 24px !important;
+    margin-bottom: 20px !important;
     overflow: visible !important;
     break-inside: auto;
     page-break-inside: auto;
