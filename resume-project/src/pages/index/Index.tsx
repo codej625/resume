@@ -5,11 +5,11 @@ import Header from "@/pages/index/Header";
 import Main from "@/pages/index/Main";
 import "@/assets/css/common.css";
 
-export default function Index() {
+function useHiddenCornerTrigger(onTrigger: () => void) {
   const clickCountRef = useRef(0);
   const resetTimerRef = useRef<number | null>(null);
 
-  const handleHiddenCornerClick = () => {
+  return () => {
     if (resetTimerRef.current !== null) {
       window.clearTimeout(resetTimerRef.current);
     }
@@ -19,17 +19,7 @@ export default function Index() {
     if (clickCountRef.current >= 5) {
       clickCountRef.current = 0;
       resetTimerRef.current = null;
-
-      const prevTitle = document.title;
-      document.title = "이진우 이력서";
-      window.addEventListener(
-        "afterprint",
-        () => {
-          document.title = prevTitle;
-        },
-        { once: true }
-      );
-      window.print();
+      onTrigger();
       return;
     }
 
@@ -38,6 +28,42 @@ export default function Index() {
       resetTimerRef.current = null;
     }, 2000);
   };
+}
+
+const hiddenCornerButtonSx = {
+  position: "fixed",
+  left: 0,
+  width: 64,
+  height: 64,
+  p: 0,
+  m: 0,
+  border: 0,
+  bgcolor: "transparent",
+  opacity: 0,
+  cursor: "default",
+  zIndex: 9999,
+  "@media print": {
+    display: "none",
+  },
+} as const;
+
+export default function Index() {
+  const handleHiddenCornerClick = useHiddenCornerTrigger(() => {
+    const prevTitle = document.title;
+    document.title = "이진우 이력서";
+    window.addEventListener(
+      "afterprint",
+      () => {
+        document.title = prevTitle;
+      },
+      { once: true }
+    );
+    window.print();
+  });
+
+  const handleHiddenBottomCornerClick = useHiddenCornerTrigger(() => {
+    window.open("https://web.archive.org/", "_blank", "noopener,noreferrer");
+  });
 
   return (
     <>
@@ -47,23 +73,15 @@ export default function Index() {
         aria-hidden="true"
         tabIndex={-1}
         onClick={handleHiddenCornerClick}
-        sx={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: 64,
-          height: 64,
-          p: 0,
-          m: 0,
-          border: 0,
-          bgcolor: "transparent",
-          opacity: 0,
-          cursor: "default",
-          zIndex: 9999,
-          "@media print": {
-            display: "none",
-          },
-        }}
+        sx={{ ...hiddenCornerButtonSx, top: 0 }}
+      />
+      <Box
+        component="button"
+        type="button"
+        aria-hidden="true"
+        tabIndex={-1}
+        onClick={handleHiddenBottomCornerClick}
+        sx={{ ...hiddenCornerButtonSx, bottom: 0 }}
       />
       <Header />
       <Main />
