@@ -58,7 +58,7 @@ export default function Main() {
                 "@media print": {
                   position: "static",
                   display: "flex",
-                  flexDirection: "row",
+                  flexDirection: "row-reverse",
                   alignItems: "center",
                   gap: 3.5,
                   p: 3,
@@ -97,9 +97,6 @@ export default function Main() {
                       pb: 1.5,
                       borderBottom: "1px solid",
                       borderColor: "divider",
-                      display: "flex",
-                      alignItems: "baseline",
-                      gap: 1.5,
                     },
                   }}
                 >
@@ -111,7 +108,7 @@ export default function Main() {
                       fontWeight: weight.bold,
                       textAlign: "center",
                       "@media print": {
-                        mb: 0,
+                        mb: 0.5,
                         textAlign: "left",
                       },
                     }}
