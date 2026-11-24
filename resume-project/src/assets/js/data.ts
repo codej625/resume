@@ -8,10 +8,16 @@ export interface ProjectTask {
   bullets: Array<string | ProjectBullet>;
 }
 
+export interface ProjectLink {
+  label: string;
+  url: string;
+}
+
 export interface Project {
   title: string;
   company: string;
   tasks: ProjectTask[];
+  links?: ProjectLink[];
 }
 
 export interface Career {
@@ -161,6 +167,7 @@ export const projects: Project[] = [
   {
     title: "MD 업무 자동화 플랫폼 및 브랜드 사이트 개발",
     company: "RAD.",
+    links: [{ label: "RAD.", url: "https://www.raddot.co.kr" }],
     tasks: [
       {
         title: "프로젝트 기획 (PM)",
@@ -191,6 +198,7 @@ export const projects: Project[] = [
   {
     title: "프로원 광고 사이트 및 CRM 개발",
     company: "RAD.",
+    links: [{ label: "프로원", url: "https://proone-home-doctor.com" }],
     tasks: [
       {
         title: "프로젝트 기획 (PM)",
@@ -322,6 +330,7 @@ export const projects: Project[] = [
   {
     title: "천재교육 모바일 광고 솔루션 / CRM 개발 및 유지보수",
     company: "엠플랜잇",
+    links: [{ label: "천재", url: "https://ad-milkt.com" }],
     tasks: [
       {
         title: "AWS 클라우드 전환 및 대규모 트래픽 대응",
@@ -355,6 +364,7 @@ export const projects: Project[] = [
   {
     title: "키움에셋플래너 DB Gathering 사이트 / CRM 개발 및 유지보수",
     company: "엠플랜잇",
+    links: [{ label: "키움", url: "https://www.kiwoomapmall.com" }],
     tasks: [
       {
         title: "클라이언트 CRM 연동 API 및 유입 분석 구축",
@@ -401,8 +411,13 @@ export const projects: Project[] = [
   },
   {
     title:
-      "주요 보험사 공식 다이렉트몰 웹 서비스 운영 및 보안 SM 업무\n(롯데손보 / 흥국생명 / 한화손보)",
+      "주요 보험사 공식 다이렉트몰 웹 서비스 운영 및 보안 SM 업무\n(흥국생명 / 한화손보 / 롯데손보)",
     company: "엠플랜잇",
+    links: [
+      { label: "흥국생명", url: "https://www.heungkukdirect.com" },
+      { label: "한화손보", url: "https://www.hwgi.kr" },
+      { label: "롯데손보", url: "https://www.lotteinsumall.com" },
+    ],
     tasks: [
       {
         title: "보안 강화 및 인프라 운영",
@@ -430,6 +445,7 @@ export const projects: Project[] = [
   {
     title: "자사 홈페이지 리뉴얼 / 어드민 개발",
     company: "엠플랜잇",
+    links: [{ label: "엠플랜잇", url: "https://www.mplanit.co.kr" }],
     tasks: [
       {
         title: "사내 어드민 개발 (매출 통계, 팀별 일정 관리)",
@@ -449,6 +465,7 @@ export const projects: Project[] = [
   {
     title: "키딕 (KeyDig) 키워드 분석 솔루션 개발 (애드테크 은상 수상)",
     company: "엠플랜잇",
+    links: [{ label: "키딕", url: "https://keydig.io/" }],
     tasks: [
       {
         title: "키워드 수집 파이프라인 및 외부 API 연동",
@@ -474,6 +491,7 @@ export const projects: Project[] = [
   {
     title: "용인공원 아너스톤 유지보수",
     company: "엠플랜잇",
+    links: [{ label: "용인공원", url: "https://www.yongin-park.com" }],
     tasks: [
       {
         title: "윈도우 서버 운영 및 외부 CRM API 연동",
@@ -493,6 +511,7 @@ export const projects: Project[] = [
   {
     title: "자사 이커머스 및 ERP/WMS 운영/유지보수",
     company: "컴퓨존",
+    links: [{ label: "컴퓨존", url: "https://www.compuzone.co.kr" }],
     tasks: [
       {
         title: "외부 WMS 연동 미들웨어 개발",

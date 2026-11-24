@@ -1,4 +1,4 @@
-import { Box, Chip, Paper, Stack, Typography } from "@mui/material";
+import { Box, Chip, Link, Paper, Stack, Typography } from "@mui/material";
 import {
   advisories,
   careers,
@@ -6,6 +6,7 @@ import {
   serviceLaunches,
   totalTenure,
   type Project,
+  type ProjectLink,
 } from "@/assets/js/data";
 import { fontWeight as weight } from "@/assets/css/font";
 
@@ -35,6 +36,42 @@ const sectionTitleSx = {
   borderBottom: "2px solid",
   borderColor: "primary.main",
 } as const;
+
+const projectTitleSx = {
+  color: "text.primary",
+  fontWeight: weight.medium,
+  lineHeight: 1.4,
+  whiteSpace: "pre-line",
+} as const;
+
+function titleWithLinks(title: string, links: ProjectLink[]) {
+  const nodes: Array<string | ProjectLink> = [];
+  let rest = title;
+
+  while (rest.length > 0) {
+    let earliest = -1;
+    let match: ProjectLink | null = null;
+
+    for (const link of links) {
+      const index = rest.indexOf(link.label);
+      if (index !== -1 && (earliest === -1 || index < earliest)) {
+        earliest = index;
+        match = link;
+      }
+    }
+
+    if (earliest === -1 || !match) {
+      nodes.push(rest);
+      break;
+    }
+
+    if (earliest > 0) nodes.push(rest.slice(0, earliest));
+    nodes.push(match);
+    rest = rest.slice(earliest + match.label.length);
+  }
+
+  return nodes;
+}
 
 function ProjectBlock({
   project,
@@ -67,16 +104,47 @@ function ProjectBlock({
         <Box sx={{ mt: "4px", mb: 2 }}>
           <Chip label={project.company} sx={companyChipSx} />
         </Box>
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: weight.medium,
-            lineHeight: 1.4,
-            whiteSpace: "pre-line",
-          }}
-        >
-          {project.title}
-        </Typography>
+        {project.links?.length === 1 ? (
+          <Link
+            href={project.links[0].url}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="h6"
+            sx={{
+              display: "block",
+              ...projectTitleSx,
+              textDecoration: "none",
+              "&:hover": { textDecoration: "underline" },
+            }}
+          >
+            {project.title}
+          </Link>
+        ) : (
+          <Typography variant="h6" sx={projectTitleSx}>
+            {project.links && project.links.length > 1
+              ? titleWithLinks(project.title, project.links).map((part) =>
+                  typeof part === "string" ? (
+                    part
+                  ) : (
+                    <Link
+                      key={part.url}
+                      href={part.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      sx={{
+                        color: "inherit",
+                        fontWeight: "inherit",
+                        textDecoration: "none",
+                        "&:hover": { textDecoration: "underline" },
+                      }}
+                    >
+                      {part.label}
+                    </Link>
+                  )
+                )
+              : project.title}
+          </Typography>
+        )}
       </Box>
       <Stack spacing={1.5} sx={{ pl: 2, ...printBlockSx }}>
         {project.tasks.map((task, index) => (
