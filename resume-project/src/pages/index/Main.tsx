@@ -186,7 +186,18 @@ export default function Main() {
                     >
                       이메일
                     </Typography>
-                    <Typography variant="body1">dkwksla@naver.com</Typography>
+                    <Link
+                      href="mailto:dkwksla@naver.com"
+                      variant="body1"
+                      sx={{
+                        color: "text.primary",
+                        fontWeight: weight.regular,
+                        textDecoration: "none",
+                        "&:hover": { textDecoration: "underline" },
+                      }}
+                    >
+                      dkwksla@naver.com
+                    </Link>
                   </Box>
                   <Box>
                     <Typography
@@ -228,7 +239,20 @@ export default function Main() {
                     >
                       GitHub
                     </Typography>
-                    <Typography variant="body1">https://github.com/codej625</Typography>
+                    <Link
+                      href="https://github.com/codej625"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="body1"
+                      sx={{
+                        color: "text.primary",
+                        fontWeight: weight.regular,
+                        textDecoration: "none",
+                        "&:hover": { textDecoration: "underline" },
+                      }}
+                    >
+                      https://github.com/codej625
+                    </Link>
                   </Box>
                 </Stack>
               </Box>

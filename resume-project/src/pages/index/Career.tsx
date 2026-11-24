@@ -315,6 +315,19 @@ export function ServiceLaunch() {
             >
               {item.domain} · {item.role}
             </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                display: "block",
+                color: "text.secondary",
+                lineHeight: 1.7,
+                fontWeight: weight.regular,
+                wordBreak: "keep-all",
+                overflowWrap: "anywhere",
+              }}
+            >
+              {item.summary}
+            </Typography>
             <Box sx={{ mt: 1.5, ...printBlockSx }}>
               {item.duties.map((duty) => (
                 <Typography

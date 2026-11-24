@@ -35,6 +35,7 @@ export interface ServiceLaunchItem {
   domain: string;
   role: string;
   period: string;
+  summary: string;
   duties: string[];
 }
 
@@ -144,6 +145,8 @@ export const serviceLaunches: ServiceLaunchItem[] = [
     domain: "MD 플랫폼",
     role: "CTO",
     period: "2026.01 ~ 운영 중",
+    summary:
+      "상품 재고, 원가, 옵션을 한곳에서 관리하고 쇼핑몰 채널별 마진 계산과 스마트스토어 대량등록, 클라이언트 전자결재까지 한 흐름으로 처리하는 MD 업무 자동화 플랫폼.",
     duties: [
       "MD 업무 자동화 플랫폼 기획 (PM) 및 개발",
       "클라이언트 미팅 및 컨설팅",
