@@ -1,13 +1,10 @@
-import {
-  Box,
-  Container,
-  Typography,
-  Stack,
-  Link,
-  Paper,
-} from "@mui/material";
+import { Box, Container, Typography, Stack, Link, Paper } from "@mui/material";
 import identificationPicture from "@/assets/img/identification_picture.jpg";
-import Career, { Advisory, Projects, ServiceLaunch } from "@/pages/index/Career";
+import Career, {
+  Advisory,
+  Projects,
+  ServiceLaunch,
+} from "@/pages/index/Career";
 import { fontWeight as weight } from "@/assets/css/font";
 
 export default function Main() {
@@ -208,7 +205,9 @@ export default function Main() {
                     >
                       주소
                     </Typography>
-                    <Typography variant="body1">경기도 군포시 금정동</Typography>
+                    <Typography variant="body1">
+                      경기도 군포시 금정동
+                    </Typography>
                   </Box>
                   <Box>
                     <Typography
@@ -283,11 +282,17 @@ export default function Main() {
                 간략 소개
               </Typography>
               <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-                기획부터 퍼블리싱, 개발, 배포까지 전 과정을 아우르는 8년차 풀스택 빌더 이진우입니다.
+                기획부터 퍼블리싱, 개발, 배포까지 전 과정을 아우르는 8년차
+                풀스택 빌더 이진우입니다.
               </Typography>
               <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
-                이커머스, SI/SM, CRM, ERP, 공급망 보안, 키오스크 등 다양한 도메인 경험을 바탕으로 복잡한
-                비즈니스 요구사항을 정확히 조율하고 문제를 해결합니다.
+                현재 쿤텍에 재직 중이며, MD 업무 플랫폼 RAD. 서비스를 런칭해
+                운영하고 있습니다.
+              </Typography>
+              <Typography variant="body1" sx={{ lineHeight: 1.8, mt: "1.8em" }}>
+                이커머스, SI/SM, CRM, ERP, 공급망 보안, 키오스크 등 다양한
+                도메인 경험을 바탕으로 복잡한 비즈니스 요구사항을 정확히
+                조율하고 문제를 해결합니다.
               </Typography>
             </Paper>
 
@@ -372,13 +377,22 @@ export default function Main() {
               <Stack direction="row" flexWrap="wrap" sx={{ gap: 2 }}>
                 <Box
                   sx={{
-                    flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" },
+                    flex: {
+                      xs: "1 1 100%",
+                      sm: "1 1 calc(50% - 8px)",
+                      md: "1 1 calc(25% - 12px)",
+                    },
                     "@media print": { flex: "1 1 calc(25% - 12px)" },
                   }}
                 >
                   <Typography
                     variant="body1"
-                    sx={{ color: "text.secondary", display: "block", mb: 0.5, fontWeight: weight.medium }}
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: weight.medium,
+                    }}
                   >
                     병역구분
                   </Typography>
@@ -386,13 +400,22 @@ export default function Main() {
                 </Box>
                 <Box
                   sx={{
-                    flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 calc(25% - 12px)" },
+                    flex: {
+                      xs: "1 1 100%",
+                      sm: "1 1 calc(50% - 8px)",
+                      md: "1 1 calc(25% - 12px)",
+                    },
                     "@media print": { flex: "1 1 calc(25% - 12px)" },
                   }}
                 >
                   <Typography
                     variant="body1"
-                    sx={{ color: "text.secondary", display: "block", mb: 0.5, fontWeight: weight.medium }}
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: weight.medium,
+                    }}
                   >
                     최종계급
                   </Typography>
@@ -400,14 +423,23 @@ export default function Main() {
                 </Box>
                 <Box
                   sx={{
-                    flex: { xs: "1 1 100%", sm: "1 1 calc(50% - 8px)", md: "1 1 auto" },
+                    flex: {
+                      xs: "1 1 100%",
+                      sm: "1 1 calc(50% - 8px)",
+                      md: "1 1 auto",
+                    },
                     minWidth: "max-content",
                     "@media print": { flex: "1 1 auto" },
                   }}
                 >
                   <Typography
                     variant="body1"
-                    sx={{ color: "text.secondary", display: "block", mb: 0.5, fontWeight: weight.medium }}
+                    sx={{
+                      color: "text.secondary",
+                      display: "block",
+                      mb: 0.5,
+                      fontWeight: weight.medium,
+                    }}
                   >
                     복무기간
                   </Typography>
@@ -444,10 +476,16 @@ export default function Main() {
               </Typography>
               <Stack spacing={1.5}>
                 <Box>
-                  <Typography variant="h6" sx={{ mb: 0.5, fontWeight: weight.medium }}>
+                  <Typography
+                    variant="h6"
+                    sx={{ mb: 0.5, fontWeight: weight.medium }}
+                  >
                     애드테크 은상
                   </Typography>
-                  <Typography variant="body1" sx={{ mb: 0.5, color: "text.secondary" }}>
+                  <Typography
+                    variant="body1"
+                    sx={{ mb: 0.5, color: "text.secondary" }}
+                  >
                     AI기술을 활용한 디지털마케팅플랫폼, KeyDig (2022)
                     <br />
                     (사)한국디지털광고협회
@@ -463,7 +501,15 @@ export default function Main() {
             <ServiceLaunch />
 
             {/* Skills */}
-            <Paper elevation={2} sx={{ p: 4, mt: { xs: 0 }, mb: { xs: 2, md: 4 }, bgcolor: "background.paper" }}>
+            <Paper
+              elevation={2}
+              sx={{
+                p: 4,
+                mt: { xs: 0 },
+                mb: { xs: 2, md: 4 },
+                bgcolor: "background.paper",
+              }}
+            >
               <Typography
                 variant="h5"
                 component="h2"
@@ -551,13 +597,18 @@ export default function Main() {
                     <Typography
                       variant="h6"
                       component="h3"
-                      sx={{ mb: 0.5, color: "text.primary", fontWeight: weight.medium }}
+                      sx={{
+                        mb: 0.5,
+                        color: "text.primary",
+                        fontWeight: weight.medium,
+                      }}
                     >
                       {group.title}
                     </Typography>
                     <Box sx={{ pl: 2 }}>
                       {group.lines.map((line) => {
-                        const isGroupLabel = line === "Back-end" || line === "Front-end";
+                        const isGroupLabel =
+                          line === "Back-end" || line === "Front-end";
                         return (
                           <Typography
                             key={line}
