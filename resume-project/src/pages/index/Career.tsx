@@ -233,7 +233,7 @@ export function Advisory() {
       }}
     >
       <Typography variant="h5" component="h2" sx={sectionTitleSx}>
-        자문
+        자문 / 컨설팅
       </Typography>
       <Stack spacing={1.5} sx={printBlockSx}>
         {advisories.map((item) => (
