@@ -285,7 +285,7 @@ export default function Main() {
                 기획부터 퍼블리싱, 개발, 배포까지 전 과정을 아우르는 8년차
                 풀스택 빌더 이진우입니다.
               </Typography>
-              <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+              <Typography variant="body1" sx={{ lineHeight: 1.8, mt: "1.8em" }}>
                 현재 쿤텍에 재직 중이며, MD 업무 플랫폼 RAD. 서비스를 런칭해
                 운영하고 있습니다.
               </Typography>
