@@ -23,6 +23,18 @@ const printBlockSx = {
   },
 } as const;
 
+// 인쇄 시 영역 전체를 다음 장으로 넘기고, 높이는 내용만큼만 둔다
+const printAreaSx = {
+  "@media print": {
+    display: "block",
+    height: "auto",
+    flexGrow: 0,
+    alignSelf: "flex-start",
+    breakInside: "avoid",
+    pageBreakInside: "avoid",
+  },
+} as const;
+
 function formatPeriod(period: string) {
   const [start, end] = period.split(" ~ ");
   if (start && end === start) return start;
@@ -83,6 +95,7 @@ function ProjectBlock({
   return (
     <Box
       sx={{
+        ...printAreaSx,
         // 구분선은 없이 위·아래 여백만 유지
         ...(!isLast && {
           pb: 2.5,
@@ -260,10 +273,7 @@ export default function Career() {
           <Box
             key={career.company}
             sx={{
-              "@media print": {
-                breakInside: "avoid",
-                pageBreakInside: "avoid",
-              },
+              ...printAreaSx,
               ...(index < careers.length - 1 && {
                 pb: 2.5,
                 mb: 2.5,
@@ -336,7 +346,7 @@ export function ServiceLaunch() {
       </Typography>
       <Stack spacing={3} sx={printBlockSx}>
         {serviceLaunches.map((item) => (
-          <Box key={item.name}>
+          <Box key={item.name} sx={printAreaSx}>
             <Typography
               variant="h6"
               sx={{
