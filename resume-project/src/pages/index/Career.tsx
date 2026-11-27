@@ -23,15 +23,15 @@ const printBlockSx = {
   },
 } as const;
 
-// 인쇄 시 영역 전체를 다음 장으로 넘기고, 높이는 내용만큼만 둔다
+// 인쇄 시 영역 중간에서 잘려도 다음 장으로 이어진다
 const printAreaSx = {
   "@media print": {
     display: "block",
     height: "auto",
     flexGrow: 0,
     alignSelf: "flex-start",
-    breakInside: "avoid",
-    pageBreakInside: "avoid",
+    breakInside: "auto",
+    pageBreakInside: "auto",
   },
 } as const;
 
@@ -219,7 +219,6 @@ export function Advisory() {
         mt: { xs: 0 },
         mb: { xs: 2, md: 4 },
         bgcolor: "background.paper",
-        "@media print": { breakInside: "avoid", pageBreakInside: "avoid" },
       }}
     >
       <Typography variant="h5" component="h2" sx={sectionTitleSx}>
@@ -338,7 +337,6 @@ export function ServiceLaunch() {
         mt: { xs: 0 },
         mb: { xs: 2, md: 4 },
         bgcolor: "background.paper",
-        "@media print": { breakInside: "avoid", pageBreakInside: "avoid" },
       }}
     >
       <Typography variant="h5" component="h2" sx={sectionTitleSx}>

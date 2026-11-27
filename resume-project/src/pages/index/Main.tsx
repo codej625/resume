@@ -265,7 +265,7 @@ export default function Main() {
                 mt: { xs: 0 },
                 mb: { xs: 2, md: 4 },
                 bgcolor: "background.paper",
-                "@media print": { breakInside: "avoid" },
+                "@media print": { breakInside: "auto", pageBreakInside: "auto" },
               }}
             >
               <Typography
@@ -304,7 +304,7 @@ export default function Main() {
                 mt: { xs: 0 },
                 mb: { xs: 2, md: 4 },
                 bgcolor: "background.paper",
-                "@media print": { breakInside: "avoid" },
+                "@media print": { breakInside: "auto", pageBreakInside: "auto" },
               }}
             >
               <Typography
@@ -358,7 +358,7 @@ export default function Main() {
                 mt: { xs: 0 },
                 mb: { xs: 2, md: 4 },
                 bgcolor: "background.paper",
-                "@media print": { breakInside: "avoid" },
+                "@media print": { breakInside: "auto", pageBreakInside: "auto" },
               }}
             >
               <Typography
@@ -458,7 +458,7 @@ export default function Main() {
                 mt: { xs: 0 },
                 mb: { xs: 2, md: 4 },
                 bgcolor: "background.paper",
-                "@media print": { breakInside: "avoid" },
+                "@media print": { breakInside: "auto", pageBreakInside: "auto" },
               }}
             >
               <Typography
@@ -588,8 +588,8 @@ export default function Main() {
                     key={group.title}
                     sx={{
                       "@media print": {
-                        breakInside: "avoid",
-                        pageBreakInside: "avoid",
+                        breakInside: "auto",
+                        pageBreakInside: "auto",
                         mb: 2,
                       },
                     }}
