@@ -377,7 +377,19 @@ section:nth-child(5) > .container > div > div {
 
 @page {
   size: A4 portrait;
-  margin: 14mm 12mm;
+  margin: 12mm 12mm 16mm;
+
+  @bottom-right {
+    content: counter(page) " / " counter(pages);
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 9pt;
+    color: #6b7280;
+  }
+}
+
+/* 첫 장 위 여백이 없으면 크롬은 날짜·제목·주소 머리글을 모든 장에서 빼 버린다 */
+@page :first {
+  margin-top: 0;
 }
 
 @media print {
@@ -392,6 +404,10 @@ section:nth-child(5) > .container > div > div {
 
   header {
     display: none !important;
+  }
+
+  main {
+    padding-top: 12mm;
   }
 
   main,
