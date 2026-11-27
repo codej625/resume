@@ -91,16 +91,7 @@ function ProjectBlock({
         }),
       }}
     >
-      <Box
-        sx={{
-          mb: 1.5,
-          "@media print": {
-            breakInside: "avoid",
-            pageBreakInside: "avoid",
-            breakAfter: "avoid",
-          },
-        }}
-      >
+      <Box sx={{ mb: 1.5 }}>
         <Box sx={{ mt: "4px", mb: 2 }}>
           <Chip label={project.company} sx={companyChipSx} />
         </Box>
@@ -148,22 +139,8 @@ function ProjectBlock({
       </Box>
       <Stack spacing={1.5} sx={{ pl: 2, ...printBlockSx }}>
         {project.tasks.map((task, index) => (
-          <Box
-            key={task.title}
-            sx={{
-              "@media print": {
-                breakInside: "avoid",
-                pageBreakInside: "avoid",
-              },
-            }}
-          >
-            <Typography
-              variant="body1"
-              sx={{
-                fontWeight: weight.medium,
-                "@media print": { breakAfter: "avoid" },
-              }}
-            >
+          <Box key={task.title}>
+            <Typography variant="body1" sx={{ fontWeight: weight.medium }}>
               {index + 1}. {task.title}
             </Typography>
             {task.bullets.length > 0 && (
