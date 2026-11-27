@@ -50,7 +50,7 @@ const hiddenCornerButtonSx = {
 export default function Index() {
   const handleHiddenCornerClick = useHiddenCornerTrigger(() => {
     const prevTitle = document.title;
-    document.title = "";
+    document.title = " ";
     window.addEventListener(
       "afterprint",
       () => {
