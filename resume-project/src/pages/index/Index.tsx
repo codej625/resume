@@ -50,7 +50,7 @@ const hiddenCornerButtonSx = {
 export default function Index() {
   const handleHiddenCornerClick = useHiddenCornerTrigger(() => {
     const prevTitle = document.title;
-    document.title = "이진우 경력기술서";
+    document.title = "";
     window.addEventListener(
       "afterprint",
       () => {
