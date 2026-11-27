@@ -64,7 +64,7 @@ export const careers: Career[] = [
     company: "쿤텍",
     scale: "중소기업",
     domain: "공급망 보안",
-    department: "SCS 연구개발팀 엔진 개발파트",
+    department: "SCS 엔진 연구개발팀",
     position: "선임 연구원",
     period: "2025.01 ~ 재직 중",
     duties: [
